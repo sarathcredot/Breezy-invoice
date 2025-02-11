@@ -6,10 +6,13 @@
     "cra-template": "1.2.0",
     "html2canvas": "^1.4.1",
     "jspdf": "^2.5.2",
+    "otp-generator": "^4.0.1",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-router-dom": "^7.1.1",
     "react-scripts": "5.0.1",
+    "react-select": "^5.10.0",
+    "uuid": "^11.0.5",
     "web-vitals": "^4.2.4"
   },
   "scripts": {

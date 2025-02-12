@@ -372,7 +372,7 @@ const EditableInvoice = () => {
               />
             </div>
 
-            <div className="w-full sm:w-auto flex flex-col">
+            {/* <div className="w-full sm:w-auto flex flex-col">
               <label htmlFor="customerMobile">Tech Name:</label>
               <input
                 id="customerMobile"
@@ -385,7 +385,7 @@ const EditableInvoice = () => {
                   }))
                 }
               />
-            </div>
+            </div> */}
 
 
 
@@ -480,7 +480,7 @@ const EditableInvoice = () => {
           </div>
 
           <h6 className="text-right pr-6 mt-4 font-semibold">
-            Total Amount: {tottalAmount}
+            Pay Amount: {tottalAmount}
           </h6>
 
 
@@ -622,16 +622,17 @@ const EditableInvoice = () => {
 
         <div className='w-full h-[150px] flex  ' >
 
-          <div className='w-[50%] h-[100%] flex justify-start  pl-[30px]  pt-[50px]' >
+          <div className='w-[50%] h-[100%] flex justify-start  pl-[30px]  pt-[40px]' >
 
             <img className='h-[80px]' src="./title.jpg" alt="title image" />
           </div>
 
-          <div className='w-[50%] h-[100%] flex justify-end font-semibold pt-[50px] text-[17px] pr-[30px] text-[#1f709f] '  >
+          <div className='w-[50%] h-[100%] flex justify-end font-semibold pt-[40px] text-[17px] pr-[30px] text-[#1f709f] '  >
 
             <h1> Pattambi - Cherpulassery-Rd <br />
               near SNGS college <br />
               Mob:6282309320
+              <span className='ml-[40px]' >9072032278</span>
 
             </h1>
 
@@ -716,7 +717,7 @@ const EditableInvoice = () => {
 
               <tr className="bg-[#1f709f] text-white">
                 <td colSpan={3} className="border border-[#1f709f] px-4 py-2 text-right font-bold">
-                  TOTAL AMOUNT
+                  PAY AMOUNT
                 </td>
 
                 <td className="border border-[#1f709f] px-4 py-2 text-center font-bold">{tottalAmount}</td>

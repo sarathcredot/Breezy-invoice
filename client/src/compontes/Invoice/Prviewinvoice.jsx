@@ -157,23 +157,24 @@ function Prviewinvoice() {
 
           <div className='w-full h-[150px] flex  ' >
 
-            <div className='w-[50%] h-[100%] flex justify-start  pl-[30px]  pt-[50px]' >
+            <div className='w-[50%] h-[100%] flex justify-start  pl-[30px]  pt-[40px]' >
 
               <img className='h-[80px]' src="./title.jpg" alt="title image" />
             </div>
 
-            <div className='w-[50%] h-[100%] flex justify-end font-semibold pt-[50px] text-[17px] pr-[30px] text-[#1f709f] '  >
+            <div className='w-[50%] h-[100%] flex justify-end font-semibold pt-[40px] text-[17px] pr-[30px] text-[#1f709f] '  >
 
               <h1> Pattambi - Cherpulassery-Rd <br />
                 near SNGS college <br />
-                Mob:6282309320
+                Mob:6282309320<br/>
+               <span className='ml-[40px]' >9072032278</span>
 
               </h1>
 
             </div>
 
           </div>
-          <div className='w-full h-[3px] bg-[#1f709f]' ></div>
+          <div className='w-full  h-[3px] bg-[#1f709f]' ></div>
 
           <div className='w-full h-[150px]  flex justify-end items-center ' >
 
@@ -251,7 +252,7 @@ function Prviewinvoice() {
 
                 <tr className="bg-[#1f709f] text-white">
                   <td colSpan={3} className="border border-[#1f709f] px-4 py-2 text-right font-bold">
-                   TOTAL AMOUNT
+                   PAY AMOUNT
                   </td>
                   
                   <td className="border border-[#1f709f] px-4 py-2 text-center font-bold">{tottalAmount}</td>

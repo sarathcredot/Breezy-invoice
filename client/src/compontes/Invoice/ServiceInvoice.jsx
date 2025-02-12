@@ -167,22 +167,7 @@ const EditableInvoice = () => {
 
 
 
-  const addItem = () => {
-    setInvoiceData((prev) => ({
-      ...prev,
-      items: [...prev.items, { description: "", quantity: 1, price: 0 }],
-    }));
-  };
-
-  const removeItem = (index) => {
-    const updatedItems = [...invoiceData.items];
-    updatedItems.splice(index, 1);
-    setInvoiceData((prev) => ({
-      ...prev,
-      items: updatedItems,
-    }));
-  };
-
+  
   const subtotal = invoiceData.items.reduce(
     (acc, item) => acc + item.quantity * item.price,
     0
@@ -303,19 +288,10 @@ const EditableInvoice = () => {
   }
 
 
-  const options = description.map((data) => ({
-
-    value: data,
-    label: data.opt,
-
-  }))
+  
 
 
-  const des = (selectedOption) => {
-
-    console.log(selectedOption)
-  }
-
+  
 
 
   return (

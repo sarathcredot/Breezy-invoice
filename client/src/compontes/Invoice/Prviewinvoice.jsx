@@ -273,11 +273,11 @@ function Prviewinvoice() {
 
 
 
-        <div className='w-full h-[150px]  flex justify-end  ' >
+        {/* <div className='w-full h-[150px]  flex justify-end   ' > */}
 
-          <img className='w-[200px] h-[230px] pb-[50px]' src="./seal.png" alt="seal" />
+          <img  className='w-[200px] h-[230px] pb-[50px] absolute bottom-[-350px] right-[473px] ' src="./seal.png" alt="seal" />
 
-        </div>
+        {/* </div> */}
 
 
 

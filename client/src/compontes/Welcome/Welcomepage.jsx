@@ -1,7 +1,7 @@
 
 
 import React from 'react'
-import { useState,useEffect } from 'react'
+import {useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 
 function Welcomepage() {
@@ -19,7 +19,7 @@ function Welcomepage() {
 
      switchToHome()
 
-   },[])
+   })
 
     return (
         <div>

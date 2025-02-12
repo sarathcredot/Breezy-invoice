@@ -14,7 +14,7 @@ import html2canvas from "html2canvas";
 import Navbar from "../Home/Navbar"
 import { v4 as uuidv4 } from "uuid";
 import { useNavigate } from "react-router-dom";
-import Select from "react-select";
+// import Select from "react-select";
 
 
 
@@ -38,8 +38,8 @@ const EditableInvoice = () => {
     total: 0,
   });
   const navigate = useNavigate()
-  const [inputValue, setInputValue] = useState("");
-  const [filteredOptions, setFilteredOptions] = useState([]);
+  // const [inputValue, setInputValue] = useState("");
+  // const [filteredOptions, setFilteredOptions] = useState([]);
   const [discount, setdiscount] = useState(0)
   // const [tottalAmount, settotalAmount] = useState(0)
 

@@ -68,6 +68,8 @@ app.post("/invoicesent",upload.single("pdf"),async(req,res)=>{
        res.status(200).json({ success: true, message: "Invoice sent!" });
     
   } catch (error) {
+
+    console.log("err",error)
     
     res.status(500).json({ success: false, message: "Invoice sent failed!",error });
   }

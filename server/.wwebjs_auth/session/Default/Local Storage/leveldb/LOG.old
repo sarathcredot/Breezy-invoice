@@ -1,3 +1,3 @@
-2025/02/16-22:55:05.945 6aae Reusing MANIFEST /home/dev/Desktop/Breeze/server/.wwebjs_auth/session/Default/Local Storage/leveldb/MANIFEST-000001
-2025/02/16-22:55:05.945 6aae Recovering log #3
-2025/02/16-22:55:05.945 6aae Reusing old log /home/dev/Desktop/Breeze/server/.wwebjs_auth/session/Default/Local Storage/leveldb/000003.log 
+2025/02/16-22:59:17.295 6c56 Reusing MANIFEST /home/dev/Desktop/Breeze/server/.wwebjs_auth/session/Default/Local Storage/leveldb/MANIFEST-000001
+2025/02/16-22:59:17.295 6c56 Recovering log #3
+2025/02/16-22:59:17.296 6c56 Reusing old log /home/dev/Desktop/Breeze/server/.wwebjs_auth/session/Default/Local Storage/leveldb/000003.log 

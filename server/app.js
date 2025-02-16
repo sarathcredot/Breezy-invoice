@@ -62,8 +62,17 @@ app.post("/invoicesent",upload.single("pdf"),async(req,res)=>{
 
     const phoneNumber = `91${finalData.invoiceData.customer.mob}`; // Replace with the recipient's number
        const chatId = phoneNumber + '@c.us'; // WhatsApp chat ID format
-       const message = `Hello, this is your invoice!${fileUrl} `;
-       await client.sendMessage(chatId, message);
+       const message = `Hello, this is your service invoice! please download ${fileUrl} `;
+
+       const secondMessage="Thanks for choosing Breezy. Have a nice day!"
+      //  await client.sendMessage(chatId, message);
+
+      const media = await MessageMedia.fromUrl(fileUrl);
+
+      // Send media file to WhatsApp
+      await client.sendMessage(chatId, media, { caption: message });
+
+      await client.sendMessage(chatId, secondMessage);
 
        res.status(200).json({ success: true, message: "Invoice sent!" });
     

@@ -265,14 +265,14 @@ const EditableInvoice = () => {
   
       pdf.addImage(imgData, "JPEG", 0, 0, imgWidth, imgHeight);
   
-      // pdf.save(`invoice-${invoiceData.invoiceNumber}.pdf`);
-      const pdfBlob = pdf.output("blob");
-      const formData = new FormData();
-      formData.append("finalData", JSON.stringify(finalData));
-      formData.append("pdf", pdfBlob, `invoice-${invoiceData.invoiceNumber}.pdf`);
+      pdf.save(`invoice-${invoiceData.invoiceNumber}.pdf`);
+      // const pdfBlob = pdf.output("blob");
+      // const formData = new FormData();
+      // formData.append("finalData", JSON.stringify(finalData));
+      // formData.append("pdf", pdfBlob, `invoice-${invoiceData.invoiceNumber}.pdf`);
 
 
-      await axios.post("https://breezy-invoice-api.onrender.com/invoicesent",formData)
+      // await axios.post("https://breezy-invoice-api.onrender.com/invoicesent",formData)
     
     
     } catch (error) {
@@ -749,7 +749,7 @@ const EditableInvoice = () => {
       
         {/* <div className='w-full h-[150px]  flex justify-end  ' > */}
 
-          <img className='w-[200px] h-[230px] pb-[50px] absolute bottom-[-400px] right-[0px]' src="./seal.png" alt="seal" />
+          <img className='w-[200px] h-[230px] pb-[50px] absolute bottom-[-300px] right-[10px] ' src="./seal.png" alt="seal" />
 
         {/* </div> */}
 

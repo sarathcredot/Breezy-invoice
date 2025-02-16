@@ -265,14 +265,14 @@ const EditableInvoice = () => {
   
       pdf.addImage(imgData, "JPEG", 0, 0, imgWidth, imgHeight);
   
-      pdf.save(`invoice-${invoiceData.invoiceNumber}.pdf`);
-      // const pdfBlob = pdf.output("blob");
-      // const formData = new FormData();
-      // formData.append("finalData", JSON.stringify(finalData));
-      // formData.append("pdf", pdfBlob, `invoice-${invoiceData.invoiceNumber}.pdf`);
+      // pdf.save(`invoice-${invoiceData.invoiceNumber}.pdf`);
+      const pdfBlob = pdf.output("blob");
+      const formData = new FormData();
+      formData.append("finalData", JSON.stringify(finalData));
+      formData.append("pdf", pdfBlob, `invoice-${invoiceData.invoiceNumber}.pdf`);
 
 
-      // await axios.post("https://breezy-invoice-api.onrender.com/invoicesent",formData)
+      await axios.post("https://breezy-invoice-api.onrender.com/invoicesent",formData)
     
     
     } catch (error) {

@@ -50,6 +50,8 @@ const storage = multer.diskStorage({
 app.post("/invoicesent",upload.single("pdf"),async(req,res)=>{
 
   
+  try {
+
     const pdfFile = req.file
     console.log("Received PDF:", pdfFile.filename);
 
@@ -64,6 +66,11 @@ app.post("/invoicesent",upload.single("pdf"),async(req,res)=>{
        await client.sendMessage(chatId, message);
 
        res.status(200).json({ success: true, message: "Invoice sent!" });
+    
+  } catch (error) {
+    
+    res.status(500).json({ success: false, message: "Invoice sent failed!",error });
+  }
 
 
 

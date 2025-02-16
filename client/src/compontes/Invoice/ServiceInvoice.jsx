@@ -272,7 +272,7 @@ const EditableInvoice = () => {
       formData.append("pdf", pdfBlob, `invoice-${invoiceData.invoiceNumber}.pdf`);
 
 
-      await axios.post("https://breezy-invoice-api.onrender.com",formData)
+      await axios.post("https://breezy-invoice-api.onrender.com/invoicesent",formData)
     
     
     } catch (error) {

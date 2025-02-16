@@ -1,0 +1,45 @@
+2025/02/16-21:29:43.236 3f7d Reusing MANIFEST /home/dev/Desktop/Breeze/server/.wwebjs_auth/session/Default/IndexedDB/https_web.whatsapp.com_0.indexeddb.leveldb/MANIFEST-000001
+2025/02/16-21:29:43.237 3f7d Recovering log #2082
+2025/02/16-21:29:43.264 3f7d Reusing old log /home/dev/Desktop/Breeze/server/.wwebjs_auth/session/Default/IndexedDB/https_web.whatsapp.com_0.indexeddb.leveldb/002082.log 
+2025/02/16-21:29:43.264 3f7d Delete type=2 #2090
+2025/02/16-21:29:43.264 3f7d Delete type=2 #2084
+2025/02/16-21:29:43.264 3f7d Delete type=2 #2088
+2025/02/16-21:29:43.264 3f7d Delete type=2 #2086
+2025/02/16-21:29:43.264 3f7d Delete type=2 #2087
+2025/02/16-21:29:43.264 3f7d Delete type=2 #2089
+2025/02/16-21:29:43.264 3f7d Delete type=2 #2091
+2025/02/16-21:29:43.264 3f7d Delete type=2 #2085
+2025/02/16-21:29:44.740 3fca Compacting 1@1 + 10@2 files
+2025/02/16-21:29:44.819 3fca Generated table #2085@1: 73570 keys, 2217987 bytes
+2025/02/16-21:29:44.875 3fca Generated table #2086@1: 99986 keys, 2251531 bytes
+2025/02/16-21:29:44.918 3fca Generated table #2087@1: 39411 keys, 2225148 bytes
+2025/02/16-21:29:44.967 3fca Generated table #2088@1: 42818 keys, 2207147 bytes
+2025/02/16-21:29:44.983 3fca Generated table #2089@1: 1258 keys, 2140136 bytes
+2025/02/16-21:29:44.999 3fca Generated table #2090@1: 923 keys, 2132812 bytes
+2025/02/16-21:29:45.019 3fca Generated table #2091@1: 2169 keys, 2152993 bytes
+2025/02/16-21:29:45.049 3fca Generated table #2092@1: 14660 keys, 2195290 bytes
+2025/02/16-21:29:45.096 3fca Generated table #2093@1: 29373 keys, 2244153 bytes
+2025/02/16-21:29:45.101 3fca Generated table #2094@1: 2292 keys, 119728 bytes
+2025/02/16-21:29:45.101 3fca Compacted 1@1 + 10@2 files => 19886925 bytes
+2025/02/16-21:29:45.103 3fca compacted to: files[ 0 2 20 0 0 0 0 ]
+2025/02/16-21:29:45.103 3fca Delete type=2 #2074
+2025/02/16-21:29:45.103 3fca Delete type=2 #2077
+2025/02/16-21:29:45.103 3fca Delete type=2 #2079
+2025/02/16-21:29:45.103 3fca Delete type=2 #2072
+2025/02/16-21:29:45.103 3fca Delete type=2 #2083
+2025/02/16-21:29:45.103 3fca Delete type=2 #2081
+2025/02/16-21:29:45.103 3fca Delete type=2 #2078
+2025/02/16-21:29:45.103 3fca Delete type=2 #2080
+2025/02/16-21:29:45.103 3fca Delete type=2 #2075
+2025/02/16-21:29:45.103 3fca Delete type=2 #2076
+2025/02/16-21:29:45.103 3fca Delete type=2 #2073
+2025/02/16-21:29:45.437 3fcc Level-0 table #2096: started
+2025/02/16-21:29:45.450 3fcc Level-0 table #2096: 386205 bytes OK
+2025/02/16-21:29:45.452 3fcc Delete type=0 #2082
+2025/02/16-21:29:45.452 3fcc Manual compaction at level-0 from '\x008\x00\x00\x00' @ 72057594037927935 : 1 .. '\x009\x00\x00\x00' @ 0 : 0; will stop at '\x008\x00\x00\x05' @ 6165664 : 1
+2025/02/16-21:29:45.452 3fcc Compacting 1@0 + 2@1 files
+2025/02/16-21:29:45.466 3fcc Generated table #2097@0: 9495 keys, 183671 bytes
+2025/02/16-21:29:45.469 3fcc Generated table #2098@0: 879 keys, 33531 bytes
+2025/02/16-21:29:45.469 3fcc Compacted 1@0 + 2@1 files => 217202 bytes
+2025/02/16-21:29:45.471 3fcc compacted to: files[ 0 2 20 0 0 0 0 ]
+2025/02/16-21:29:45.471 3fcc Manual compaction at level-0 from '\x008\x00\x00\x05' @ 6165664 : 1 .. '\x009\x00\x00\x00' @ 0 : 0; will stop at (end)

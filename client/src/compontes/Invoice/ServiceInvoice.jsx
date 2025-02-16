@@ -15,6 +15,7 @@ import Navbar from "../Home/Navbar"
 import { v4 as uuidv4 } from "uuid";
 import { useNavigate } from "react-router-dom";
 // import Select from "react-select";
+import axios from "axios"
 
 
 
@@ -103,6 +104,12 @@ const EditableInvoice = () => {
     {
       opt: "TV panal service",
       price: 0,
+      qt: 1
+    },
+
+    {
+      opt: "Ac refitting",
+      price: 1800,
       qt: 1
     }
 
@@ -258,7 +265,16 @@ const EditableInvoice = () => {
   
       pdf.addImage(imgData, "JPEG", 0, 0, imgWidth, imgHeight);
   
-      pdf.save(`invoice-${invoiceData.invoiceNumber}.pdf`);
+      // pdf.save(`invoice-${invoiceData.invoiceNumber}.pdf`);
+      const pdfBlob = pdf.output("blob");
+      const formData = new FormData();
+      formData.append("finalData", JSON.stringify(finalData));
+      formData.append("pdf", pdfBlob, `invoice-${invoiceData.invoiceNumber}.pdf`);
+
+
+      await axios.post("https://breezy-invoice-api.onrender.com",formData)
+    
+    
     } catch (error) {
       console.error("Error generating PDF:", error);
     } finally {
@@ -624,16 +640,15 @@ const EditableInvoice = () => {
 
           <div className='w-[50%] h-[100%] flex justify-start  pl-[30px]  pt-[40px]' >
 
-            <img className='h-[80px]' src="./title.jpg" alt="title image" />
+            <img className='h-[100px] w-[100%] ' src="./title.jpg" alt="title image" />
           </div>
 
           <div className='w-[50%] h-[100%] flex justify-end font-semibold pt-[40px] text-[17px] pr-[30px] text-[#1f709f] '  >
 
             <h1> Pattambi - Cherpulassery-Rd <br />
               near SNGS college <br />
-              Mob:6282309320
-              <span className='ml-[40px]' >9072032278</span>
-
+              Mob:6282309320 | 9072032278
+              
             </h1>
 
           </div>
@@ -734,7 +749,7 @@ const EditableInvoice = () => {
       
         {/* <div className='w-full h-[150px]  flex justify-end  ' > */}
 
-          <img className='w-[200px] h-[230px] pb-[50px] absolute bottom-[-350px] right-[473px]' src="./seal.png" alt="seal" />
+          <img className='w-[200px] h-[230px] pb-[50px] absolute bottom-[-400px] right-[0px]' src="./seal.png" alt="seal" />
 
         {/* </div> */}
 

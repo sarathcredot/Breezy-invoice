@@ -159,15 +159,15 @@ function Prviewinvoice() {
 
             <div className='w-[50%] h-[100%] flex justify-start  pl-[30px]  pt-[40px]' >
 
-              <img className='h-[80px]' src="./title.jpg" alt="title image" />
+              <img className='h-[100px] w-[100%] ' src="./title.jpg" alt="title image" />
             </div>
 
             <div className='w-[50%] h-[100%] flex justify-end font-semibold pt-[40px] text-[17px] pr-[30px] text-[#1f709f] '  >
 
               <h1> Pattambi - Cherpulassery-Rd <br />
                 near SNGS college <br />
-                Mob:6282309320<br/>
-               <span className='ml-[40px]' >9072032278</span>
+                Mob:6282309320 | 9072032278
+             
 
               </h1>
 

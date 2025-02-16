@@ -616,3 +616,25 @@
 2025/02/16-23:36:22.096 7923 Delete type=2 #640
 2025/02/16-23:36:22.096 7923 Delete type=2 #634
 2025/02/16-23:36:22.096 7923 Delete type=2 #633
+2025/02/16-23:37:06.951 7956 Level-0 table #649: started
+2025/02/16-23:37:06.972 7956 Level-0 table #649: 1049143 bytes OK
+2025/02/16-23:37:06.973 7956 Delete type=0 #639
+2025/02/16-23:37:07.024 7de4 Compacting 1@1 + 7@2 files
+2025/02/16-23:37:07.084 7de4 Generated table #650@1: 54227 keys, 2209929 bytes
+2025/02/16-23:37:07.138 7de4 Generated table #651@1: 59205 keys, 2227002 bytes
+2025/02/16-23:37:07.159 7de4 Generated table #652@1: 5874 keys, 2153681 bytes
+2025/02/16-23:37:07.175 7de4 Generated table #653@1: 811 keys, 2133480 bytes
+2025/02/16-23:37:07.197 7de4 Generated table #654@1: 2208 keys, 2151395 bytes
+2025/02/16-23:37:07.240 7de4 Generated table #655@1: 15105 keys, 2201968 bytes
+2025/02/16-23:37:07.286 7de4 Generated table #656@1: 31377 keys, 2246812 bytes
+2025/02/16-23:37:07.290 7de4 Generated table #657@1: 121 keys, 44266 bytes
+2025/02/16-23:37:07.290 7de4 Compacted 1@1 + 7@2 files => 15368533 bytes
+2025/02/16-23:37:07.294 7de4 compacted to: files[ 0 1 19 0 0 0 0 ]
+2025/02/16-23:37:07.294 7de4 Delete type=2 #644
+2025/02/16-23:37:07.294 7de4 Delete type=2 #641
+2025/02/16-23:37:07.294 7de4 Delete type=2 #642
+2025/02/16-23:37:07.294 7de4 Delete type=2 #643
+2025/02/16-23:37:07.294 7de4 Delete type=2 #647
+2025/02/16-23:37:07.294 7de4 Delete type=2 #645
+2025/02/16-23:37:07.294 7de4 Delete type=2 #646
+2025/02/16-23:37:07.294 7de4 Delete type=2 #649

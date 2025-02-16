@@ -60,7 +60,7 @@ app.post("/invoicesent",upload.single("pdf"),async(req,res)=>{
       
     const fileUrl = `https://breezy-invoice-api.onrender.com/uploads/${pdfFile.filename}`;
 
-    const phoneNumber = "917592831937"; // Replace with the recipient's number
+    const phoneNumber = `91${finalData.invoiceData.customer.mob}`; // Replace with the recipient's number
        const chatId = phoneNumber + '@c.us'; // WhatsApp chat ID format
        const message = `Hello, this is your invoice!${fileUrl} `;
        await client.sendMessage(chatId, message);

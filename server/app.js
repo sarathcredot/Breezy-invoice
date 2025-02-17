@@ -45,16 +45,16 @@ const storage = multer.diskStorage({
   app.use('/uploads', express.static('uploads'));
 
 
-  // app.get("/test",(req,res)=>{
+  app.get("/test",(req,res)=>{
 
-  //   console.log("test req")
+    console.log("test req1")
 
-  //     res.json({msg:"test ok !!"})
-  // })
+      res.json({msg:"test ok !!"})
+  })
 
   app.get("/",(req,res)=>{
 
-    console.log("test req")
+    console.log("test req2")
 
     res.send("Server is running...");
   })

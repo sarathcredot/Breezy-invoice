@@ -47,6 +47,8 @@ const storage = multer.diskStorage({
 
   app.get("/test",(req,res)=>{
 
+    console.log("test req")
+
       res.json({msg:"test ok !!"})
   })
 

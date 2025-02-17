@@ -45,6 +45,10 @@ const storage = multer.diskStorage({
   app.use('/uploads', express.static('uploads'));
 
 
+  app.get("/test",(req,res)=>{
+
+      res.json({msg:"test ok !!"})
+  })
 
 
 app.post("/invoicesent",upload.single("pdf"),async(req,res)=>{
@@ -87,7 +91,11 @@ app.post("/invoicesent",upload.single("pdf"),async(req,res)=>{
 
 })
 
-
+client.on('disconnected', (reason) => {
+  console.log('WhatsApp Client Disconnected:', reason);
+  console.log('Attempting to reconnect...');
+  client.initialize();  // Reinitialize the client
+});
 
  
 

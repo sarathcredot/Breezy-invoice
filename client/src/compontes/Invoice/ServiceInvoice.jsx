@@ -16,6 +16,7 @@ import { v4 as uuidv4 } from "uuid";
 import { useNavigate } from "react-router-dom";
 // import Select from "react-select";
 import axios from "axios"
+import {message} from "antd"
 
 
 
@@ -264,6 +265,10 @@ const EditableInvoice = () => {
       const imgHeight = (canvas.height * imgWidth) / canvas.width;
   
       pdf.addImage(imgData, "JPEG", 0, 0, imgWidth, imgHeight);
+
+      invoice.style.position = "absolute";
+      invoice.style.left = "-9999px";
+      invoice.style.opacity = "0";
   
       // pdf.save(`invoice-${invoiceData.invoiceNumber}.pdf`);
       const pdfBlob = pdf.output("blob");
@@ -273,10 +278,12 @@ const EditableInvoice = () => {
 
 
       await axios.post("https://breezy-invoice-api.onrender.com/invoicesent",formData)
-    
+      message.success("invoice sent to whatsapp !!")
+      console.log("set")
     
     } catch (error) {
       console.error("Error generating PDF:", error);
+      message.success("invoice sent failed !!")
     } finally {
       // Re-hide the PDF section
       invoice.style.position = "absolute";
@@ -512,7 +519,7 @@ const EditableInvoice = () => {
               onClick={downloadPdf}
               className=" block sm:hidden w-[100px] mb-10 mr-5 h-[30px] bg-blue-500 text-white rounded-md hover:bg-blue-600"
             >
-              Download
+              Sent Invoice
             </button>
 
 

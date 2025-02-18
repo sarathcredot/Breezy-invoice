@@ -1,3 +1,2 @@
-2025/02/17-22:20:06.437 3de1 Reusing MANIFEST /home/dev/Desktop/Breeze/server/.wwebjs_auth/session/Default/Service Worker/Database/MANIFEST-000001
-2025/02/17-22:20:06.437 3de1 Recovering log #3
-2025/02/17-22:20:06.437 3de1 Reusing old log /home/dev/Desktop/Breeze/server/.wwebjs_auth/session/Default/Service Worker/Database/000003.log 
+2025/02/18-09:00:19.261 1b99 Creating DB /home/dev/Desktop/Breeze/server/.wwebjs_auth/session/Default/Service Worker/Database since it was missing.
+2025/02/18-09:00:19.269 1b99 Reusing MANIFEST /home/dev/Desktop/Breeze/server/.wwebjs_auth/session/Default/Service Worker/Database/MANIFEST-000001

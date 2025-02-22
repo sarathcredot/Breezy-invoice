@@ -157,7 +157,7 @@ function Prviewinvoice() {
 
           <div className='w-full h-[150px] flex  ' >
 
-            <div className='w-[50%] h-[100%] flex justify-start  pl-[30px]  pt-[40px]' >
+            <div className='w-[50%] h-[100%] flex justify-start  pl-[30px]  pt-[35px]' >
 
               <img className='h-[100px] w-[100%] ' src="./title.jpg" alt="title image" />
             </div>

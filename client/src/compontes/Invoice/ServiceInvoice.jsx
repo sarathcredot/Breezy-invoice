@@ -16,7 +16,7 @@ import { v4 as uuidv4 } from "uuid";
 import { useNavigate } from "react-router-dom";
 // import Select from "react-select";
 import axios from "axios"
-import {message} from "antd"
+import { message } from "antd"
 
 
 
@@ -120,7 +120,7 @@ const EditableInvoice = () => {
 
   ])
 
-  
+
 
   useEffect(() => {
 
@@ -175,7 +175,7 @@ const EditableInvoice = () => {
 
 
 
-  
+
   const subtotal = invoiceData.items.reduce(
     (acc, item) => acc + item.quantity * item.price,
     0
@@ -239,37 +239,37 @@ const EditableInvoice = () => {
 
   const downloadPdf = async () => {
     const invoice = document.getElementById("invoice-pdf");
-  
+
     // Temporarily make the PDF section visible
     invoice.style.position = "static";
     invoice.style.left = "0";
     invoice.style.opacity = "1";
-  
+
     try {
       const canvas = await html2canvas(invoice, {
         scale: 2, // Reduce scale to keep quality but limit size (try 1.5 or 2)
         useCORS: true, // Ensures proper rendering of external images
         allowTaint: false,
       });
-  
+
       const imgData = canvas.toDataURL("image/jpeg", 0.5); // JPEG instead of PNG & reduced quality to 50%
-  
+
       const pdf = new jsPDF({
         orientation: "p", // Portrait mode
         unit: "mm",
         format: "a4", // Standard A4 size
         compress: true, // Enable compression
       });
-  
+
       const imgWidth = 210; // A4 width in mm
       const imgHeight = (canvas.height * imgWidth) / canvas.width;
-  
+
       pdf.addImage(imgData, "JPEG", 0, 0, imgWidth, imgHeight);
 
       invoice.style.position = "absolute";
       invoice.style.left = "-9999px";
       invoice.style.opacity = "0";
-  
+
       // pdf.save(`invoice-${invoiceData.invoiceNumber}.pdf`);
       const pdfBlob = pdf.output("blob");
       const formData = new FormData();
@@ -277,10 +277,12 @@ const EditableInvoice = () => {
       formData.append("pdf", pdfBlob, `invoice-${invoiceData.invoiceNumber}.pdf`);
 
 
-      await axios.post("https://breezy-invoice-api.onrender.com/invoicesent",formData)
+      await axios.post("https://breezy-invoice-api.onrender.com/invoicesent", formData)
       message.success("invoice sent to whatsapp !!")
       console.log("set")
-    
+      navigate("/home")
+
+
     } catch (error) {
       console.error("Error generating PDF:", error);
       message.success("invoice sent failed !!")
@@ -291,7 +293,7 @@ const EditableInvoice = () => {
       invoice.style.opacity = "0";
     }
   };
-  
+
 
   const discriptionSeclect = (index, selectedOption) => {
 
@@ -311,10 +313,10 @@ const EditableInvoice = () => {
   }
 
 
-  
 
 
-  
+
+
 
 
   return (
@@ -645,7 +647,7 @@ const EditableInvoice = () => {
 
         <div className='w-full h-[150px] flex  ' >
 
-          <div className='w-[50%] h-[100%] flex justify-start  pl-[30px]  pt-[40px]' >
+          <div className='w-[50%] h-[100%] flex justify-start  pl-[30px]  pt-[35px]' >
 
             <img className='h-[100px] w-[100%] ' src="./title.jpg" alt="title image" />
           </div>
@@ -655,7 +657,7 @@ const EditableInvoice = () => {
             <h1> Pattambi - Cherpulassery-Rd <br />
               near SNGS college <br />
               Mob:6282309320 | 9072032278
-              
+
             </h1>
 
           </div>
@@ -725,16 +727,16 @@ const EditableInvoice = () => {
               </tr>
 
 
-             {
-                   discount >0 ?   <tr className="bg-[#1f709f] text-white">
-                   <td colSpan={3} className="border border-[#1f709f] px-4 py-2 text-right font-bold">
-                     DISCOUNT
-                   </td>
-   
-                   <td className="border border-[#1f709f] px-4 py-2 text-center font-bold">{discount}</td>
-                 </tr>
-                 :null
-             }
+              {
+                discount > 0 ? <tr className="bg-[#1f709f] text-white">
+                  <td colSpan={3} className="border border-[#1f709f] px-4 py-2 text-right font-bold">
+                    DISCOUNT
+                  </td>
+
+                  <td className="border border-[#1f709f] px-4 py-2 text-center font-bold">{discount}</td>
+                </tr>
+                  : null
+              }
 
 
               <tr className="bg-[#1f709f] text-white">
@@ -753,10 +755,10 @@ const EditableInvoice = () => {
         </div>
 
 
-      
+
         {/* <div className='w-full h-[150px]  flex justify-end  ' > */}
 
-          <img className='w-[200px] h-[230px] pb-[50px] absolute bottom-[-450px] right-[10px] ' src="./seal.png" alt="seal" />
+        <img className='w-[200px] h-[230px] pb-[50px] absolute bottom-[-450px] right-[10px] ' src="./seal.png" alt="seal" />
 
         {/* </div> */}
 

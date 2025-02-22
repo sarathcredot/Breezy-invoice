@@ -1,2 +1,3 @@
-2025/02/18-09:00:17.824 1b97 Creating DB /home/dev/Desktop/Breeze/server/.wwebjs_auth/session/Default/Local Storage/leveldb since it was missing.
-2025/02/18-09:00:17.831 1b97 Reusing MANIFEST /home/dev/Desktop/Breeze/server/.wwebjs_auth/session/Default/Local Storage/leveldb/MANIFEST-000001
+2025/02/22-11:53:37.337 4f84 Reusing MANIFEST /home/dev/Desktop/Breeze/server/.wwebjs_auth/session/Default/Local Storage/leveldb/MANIFEST-000001
+2025/02/22-11:53:37.339 4f84 Recovering log #7
+2025/02/22-11:53:37.341 4f84 Reusing old log /home/dev/Desktop/Breeze/server/.wwebjs_auth/session/Default/Local Storage/leveldb/000007.log 

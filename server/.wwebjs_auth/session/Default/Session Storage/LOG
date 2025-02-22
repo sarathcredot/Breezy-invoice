@@ -1,2 +1,3 @@
-2025/02/18-09:00:18.217 1b97 Creating DB /home/dev/Desktop/Breeze/server/.wwebjs_auth/session/Default/Session Storage since it was missing.
-2025/02/18-09:00:18.227 1b97 Reusing MANIFEST /home/dev/Desktop/Breeze/server/.wwebjs_auth/session/Default/Session Storage/MANIFEST-000001
+2025/02/22-11:53:38.644 4f84 Reusing MANIFEST /home/dev/Desktop/Breeze/server/.wwebjs_auth/session/Default/Session Storage/MANIFEST-000001
+2025/02/22-11:53:38.644 4f84 Recovering log #3
+2025/02/22-11:53:38.644 4f84 Reusing old log /home/dev/Desktop/Breeze/server/.wwebjs_auth/session/Default/Session Storage/000003.log 

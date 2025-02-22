@@ -68,33 +68,33 @@ function Prviewinvoice() {
 
   const downloadPdf = async () => {
     const invoice = document.getElementById("invoice-pdf");
-  
+
     // Temporarily make the PDF section visible
     invoice.style.position = "static";
     invoice.style.left = "0";
     invoice.style.opacity = "1";
-  
+
     try {
       const canvas = await html2canvas(invoice, {
         scale: 2, // Reduce scale to keep quality but limit size (try 1.5 or 2)
         useCORS: true, // Ensures proper rendering of external images
         allowTaint: false,
       });
-  
+
       const imgData = canvas.toDataURL("image/jpeg", 0.5); // JPEG instead of PNG & reduced quality to 50%
-  
+
       const pdf = new jsPDF({
         orientation: "p", // Portrait mode
         unit: "mm",
         format: "a4", // Standard A4 size
         compress: true, // Enable compression
       });
-  
+
       const imgWidth = 210; // A4 width in mm
       const imgHeight = (canvas.height * imgWidth) / canvas.width;
-  
+
       pdf.addImage(imgData, "JPEG", 0, 0, imgWidth, imgHeight);
-  
+
       pdf.save(`invoice-${invoiceData.invoiceNumber}.pdf`);
     } catch (error) {
       console.error("Error generating PDF:", error);
@@ -105,20 +105,34 @@ function Prviewinvoice() {
       invoice.style.opacity = "0";
     }
   };
-  
+
   const location = useLocation();
-  console.log("props",location.state)
+  console.log("props", location.state)
 
   const { invoiceData,
     discount,
     tottalAmount,
-    subtotal}=location.state
+    subtotal } = location.state
 
 
 
   return (
     <div>
       <Navbar />
+
+
+      <div className='w-full h-[100px] flex justify-end pr-[200px]' >
+
+        <button
+          onClick={downloadPdf}
+          className="w-[150px] mt-[50px] h-[50px] bg-[#1f709f] text-white text-[17px] rounded-md hover:bg-blue-600"
+        >
+          Sent Invoice
+        </button>
+
+
+      </div>
+
 
       <div className='  shadow-[0px_4px_10px_rgba(0,0,0,0.25)]'
         style={{
@@ -167,7 +181,7 @@ function Prviewinvoice() {
               <h1> Pattambi - Cherpulassery-Rd <br />
                 near SNGS college <br />
                 Mob:6282309320 | 9072032278
-             
+
 
               </h1>
 
@@ -218,13 +232,13 @@ function Prviewinvoice() {
                 {invoiceData.items.map((row, index) => (
                   <tr key={index} className="">
                     <td className=" border-r border-[#1f709f]  px-4 py-4">{row?.description}</td>
-                    <td className="border-r border-[#1f709f] px-4 py-4 text-center">{row?.price >0 ? row?.price:"" }</td>
-                    <td className=" border-r border-[#1f709f] px-4 py-2 text-center">{row?.quantity>0 ? row.quantity : ""}</td>
+                    <td className="border-r border-[#1f709f] px-4 py-4 text-center">{row?.price > 0 ? row?.price : ""}</td>
+                    <td className=" border-r border-[#1f709f] px-4 py-2 text-center">{row?.quantity > 0 ? row.quantity : ""}</td>
                     <td className=" px-4 py-2 text-center">
-                      
-                    {row?.quantity * row?.price > 0 ? (row.quantity * row.price).toFixed(2) : ""}
 
-                      </td>
+                      {row?.quantity * row?.price > 0 ? (row.quantity * row.price).toFixed(2) : ""}
+
+                    </td>
                   </tr>
                 ))}
               </tbody>
@@ -233,34 +247,34 @@ function Prviewinvoice() {
                   <td colSpan={3} className="border border-[#1f709f] px-4 py-2 text-right font-bold">
                     TOTAL
                   </td>
-                  
+
                   <td className="border border-[#1f709f] px-4 py-2 text-center font-bold">{subtotal}</td>
                 </tr>
-                
+
 
                 {
-                  discount >0 ? <tr className="bg-[#1f709f] text-white">
-                  <td colSpan={3} className="border border-[#1f709f] px-4 py-2 text-right font-bold">
-                    DISCOUNT
-                  </td>
-                  
-                  <td className="border border-[#1f709f] px-4 py-2 text-center font-bold">{discount}</td>
-                </tr>
-                :null
+                  discount > 0 ? <tr className="bg-[#1f709f] text-white">
+                    <td colSpan={3} className="border border-[#1f709f] px-4 py-2 text-right font-bold">
+                      DISCOUNT
+                    </td>
+
+                    <td className="border border-[#1f709f] px-4 py-2 text-center font-bold">{discount}</td>
+                  </tr>
+                    : null
                 }
-                
+
 
                 <tr className="bg-[#1f709f] text-white">
                   <td colSpan={3} className="border border-[#1f709f] px-4 py-2 text-right font-bold">
-                   PAY AMOUNT
+                    PAY AMOUNT
                   </td>
-                  
+
                   <td className="border border-[#1f709f] px-4 py-2 text-center font-bold">{tottalAmount}</td>
                 </tr>
-                
 
 
-               
+
+
               </tfoot>
             </table>
           </div>
@@ -269,16 +283,16 @@ function Prviewinvoice() {
 
 
 
-        
 
 
 
 
-        {/* <div className='w-full h-[150px]  flex justify-end   ' > */}
 
-          <img  className='w-[200px] h-[230px] pb-[50px] absolute bottom-[-350px] right-[473px] ' src="./seal.png" alt="seal" />
+          {/* <div className='w-full h-[150px]  flex justify-end   ' > */}
 
-        {/* </div> */}
+          <img className='w-[200px] h-[230px] pb-[50px] absolute bottom-[-350px] right-[473px] ' src="./seal.png" alt="seal" />
+
+          {/* </div> */}
 
 
 
@@ -312,7 +326,6 @@ function Prviewinvoice() {
 
 
 
-      <button onClick={downloadPdf}>Download Invoice as PDF</button>
 
     </div>
 

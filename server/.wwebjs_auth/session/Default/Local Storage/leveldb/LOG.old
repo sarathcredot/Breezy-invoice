@@ -1,6 +1,0 @@
-2025/02/21-13:35:15.505 8807 Reusing MANIFEST /home/dev/Desktop/Breeze/server/.wwebjs_auth/session/Default/Local Storage/leveldb/MANIFEST-000001
-2025/02/21-13:35:15.506 8807 Recovering log #4
-2025/02/21-13:35:15.507 8807 Reusing old log /home/dev/Desktop/Breeze/server/.wwebjs_auth/session/Default/Local Storage/leveldb/000004.log 
-2025/02/21-14:15:32.606 8cba Level-0 table #8: started
-2025/02/21-14:15:32.829 8cba Level-0 table #8: 15727 bytes OK
-2025/02/21-14:15:32.867 8cba Delete type=0 #4

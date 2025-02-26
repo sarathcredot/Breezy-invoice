@@ -1,0 +1,34 @@
+2025/02/26-18:03:33.369 3b1e Reusing MANIFEST /home/dev/Desktop/Breeze/server/session/session-breezy-bot/Default/IndexedDB/https_web.whatsapp.com_0.indexeddb.leveldb/MANIFEST-000001
+2025/02/26-18:03:33.369 3b1e Recovering log #454
+2025/02/26-18:03:33.390 3b1e Reusing old log /home/dev/Desktop/Breeze/server/session/session-breezy-bot/Default/IndexedDB/https_web.whatsapp.com_0.indexeddb.leveldb/000454.log 
+2025/02/26-18:03:35.045 3b1b Level-0 table #471: started
+2025/02/26-18:03:35.050 3b1b Level-0 table #471: 153479 bytes OK
+2025/02/26-18:03:35.052 3b1b Delete type=0 #454
+2025/02/26-18:03:35.052 3b1b Manual compaction at level-0 from '\x00\x1c\x00\x00\x00' @ 72057594037927935 : 1 .. '\x00\x1d\x00\x00\x00' @ 0 : 0; will stop at '\x00\x1c\x00\x00\x05' @ 1892202 : 1
+2025/02/26-18:03:35.053 3b1b Compacting 1@0 + 1@1 files
+2025/02/26-18:03:35.061 3b1b Generated table #472@0: 3450 keys, 71957 bytes
+2025/02/26-18:03:35.062 3b1b Generated table #473@0: 35 keys, 2743 bytes
+2025/02/26-18:03:35.062 3b1b Compacted 1@0 + 1@1 files => 74700 bytes
+2025/02/26-18:03:35.063 3b1b compacted to: files[ 0 2 13 0 0 0 0 ]
+2025/02/26-18:03:35.064 3b1b Delete type=2 #471
+2025/02/26-18:03:35.064 3b1b Manual compaction at level-0 from '\x00\x1c\x00\x00\x05' @ 1892202 : 1 .. '\x00\x1d\x00\x00\x00' @ 0 : 0; will stop at (end)
+2025/02/26-18:03:36.900 3b1b Compacting 1@1 + 7@2 files
+2025/02/26-18:03:36.958 3b1b Generated table #474@1: 49313 keys, 2214429 bytes
+2025/02/26-18:03:37.044 3b1b Generated table #475@1: 51167 keys, 2224861 bytes
+2025/02/26-18:03:37.070 3b1b Generated table #476@1: 1379 keys, 2142201 bytes
+2025/02/26-18:03:37.092 3b1b Generated table #477@1: 1040 keys, 2134688 bytes
+2025/02/26-18:03:37.120 3b1b Generated table #478@1: 2441 keys, 2154071 bytes
+2025/02/26-18:03:37.184 3b1b Generated table #479@1: 18345 keys, 2217813 bytes
+2025/02/26-18:03:37.257 3b1b Generated table #480@1: 28854 keys, 2233176 bytes
+2025/02/26-18:03:37.258 3b1b Generated table #481@1: 8 keys, 13441 bytes
+2025/02/26-18:03:37.258 3b1b Compacted 1@1 + 7@2 files => 15334680 bytes
+2025/02/26-18:03:37.260 3b1b compacted to: files[ 0 1 14 0 0 0 0 ]
+2025/02/26-18:03:37.261 3b1b Delete type=2 #462
+2025/02/26-18:03:37.261 3b1b Delete type=2 #472
+2025/02/26-18:03:37.261 3b1b Delete type=2 #457
+2025/02/26-18:03:37.261 3b1b Delete type=2 #458
+2025/02/26-18:03:37.261 3b1b Delete type=2 #464
+2025/02/26-18:03:37.261 3b1b Delete type=2 #460
+2025/02/26-18:03:37.261 3b1b Delete type=2 #459
+2025/02/26-18:03:37.261 3b1b Delete type=2 #463
+2025/02/26-18:03:37.261 3b1b Delete type=2 #461

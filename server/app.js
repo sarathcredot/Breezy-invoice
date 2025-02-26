@@ -89,7 +89,7 @@ app.post("/invoicesent", upload.single("pdf"), async (req, res) => {
     const secondMessage = "Thanks for choosing Breezy. Have a nice day!";
 
     const media = await MessageMedia.fromUrl(fileUrl);
-    await client.sendMessage(chatId, media, { caption: message });
+    await client.sendMessage(chatId, media, );
     await client.sendMessage(chatId, secondMessage);
 
     res.status(200).json({ success: true, message: "Invoice sent!" });

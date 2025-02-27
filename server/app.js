@@ -119,17 +119,17 @@ app.post("/invoicesent", upload.single("pdf"), async (req, res) => {
 });
 
 
-setInterval(async () => {
-  console.log("Checking WhatsApp connection...");
-  if (!client.info || !client.info.wid) {
-    console.log("WhatsApp client is not connected. Reconnecting...");
-    client.initialize();
-  } else {
+// setInterval(async () => {
+//   console.log("Checking WhatsApp connection...");
+//   if (!client.info || !client.info.wid) {
+//     console.log("WhatsApp client is not connected. Reconnecting...");
+//     client.initialize();
+//   } else {
 
 
-    console.log("WhatsApp client is active.");
-  }
-}, 120000); 
+//     console.log("WhatsApp client is active.");
+//   }
+// }, 120000); 
 
 
 

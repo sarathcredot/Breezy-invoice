@@ -1,3 +1,2 @@
-2025/02/27-09:38:01.938 2978 Reusing MANIFEST /home/dev/Desktop/Breeze/server/session/session-breezy-bot/Default/Session Storage/MANIFEST-000001
-2025/02/27-09:38:01.940 2978 Recovering log #3
-2025/02/27-09:38:01.941 2978 Reusing old log /home/dev/Desktop/Breeze/server/session/session-breezy-bot/Default/Session Storage/000003.log 
+2025/02/27-09:49:53.544 2ebb Creating DB /home/dev/Desktop/Breeze/server/session/session-breezy-bot/Default/Session Storage since it was missing.
+2025/02/27-09:49:53.561 2ebb Reusing MANIFEST /home/dev/Desktop/Breeze/server/session/session-breezy-bot/Default/Session Storage/MANIFEST-000001

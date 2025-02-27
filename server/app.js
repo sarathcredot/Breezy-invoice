@@ -15,7 +15,7 @@ mongoose.connect("mongodb+srv://sarathsarath93366:sarath1937@cluster0.c3sdg.mong
   useNewUrlParser: true,
   useUnifiedTopology: true,
 }).then(() => console.log("✅ Connected to MongoDB"))
-.catch((err) => console.error("❌ MongoDB Connection Error:", err));
+  .catch((err) => console.error("❌ MongoDB Connection Error:", err));
 
 const sessionStore = new MongoStore({ mongoose: mongoose });
 
@@ -37,6 +37,21 @@ const storage = multer.diskStorage({
 const upload = multer({ storage });
 app.use("/uploads", express.static("uploads"));
 
+app.get("/test", (req, res) => {
+
+  console.log("test req1")
+
+  res.json({ msg: "test ok !!" })
+})
+
+app.get("/", (req, res) => {
+
+  console.log("test req2")
+
+  res.send("Server is running...");
+})
+
+
 // Initialize WhatsApp Client with MongoDB session storage
 const client = new Client({
   authStrategy: new LocalAuth({ clientId: "breezy-bot", dataPath: "./session", store: sessionStore }),
@@ -55,7 +70,7 @@ client.on("authenticated", async (session) => {
   console.log("✅ WhatsApp authenticated!");
 
   // Check if session is being saved
- 
+
 });
 
 client.on("message", async (message) => {
@@ -84,12 +99,16 @@ app.post("/invoicesent", upload.single("pdf"), async (req, res) => {
     const phoneNumber = `91${finalData.invoiceData.customer.mob}`;
     const chatId = phoneNumber + "@c.us";
 
+    console.log("invoice reseved",pdfFile.filename)
+
     const fileUrl = `https://breezy-invoice-api.onrender.com/uploads/${pdfFile.filename}`;
     const message = `Hello, this is your service invoice! Please download: ${fileUrl}`;
     const secondMessage = "Thanks for choosing Breezy. Have a nice day!";
 
-    const media = await MessageMedia.fromUrl(fileUrl);
-    await client.sendMessage(chatId, media, );
+    const media = await MessageMedia.fromUrl(fileUrl,{
+      unsafeMime: true
+    });
+    await client.sendMessage(chatId, media,);
     await client.sendMessage(chatId, secondMessage);
 
     res.status(200).json({ success: true, message: "Invoice sent!" });
@@ -98,6 +117,27 @@ app.post("/invoicesent", upload.single("pdf"), async (req, res) => {
     res.status(500).json({ success: false, message: "Invoice send failed!", error });
   }
 });
+
+
+setInterval(async () => {
+  console.log("Checking WhatsApp connection...");
+  if (!client.info || !client.info.wid) {
+    console.log("WhatsApp client is not connected. Reconnecting...");
+    client.initialize();
+  } else {
+
+
+    console.log("WhatsApp client is active.");
+  }
+}, 120000); 
+
+
+
+
+
+
+
+
 
 // Start Server
 app.listen(3018, () => {

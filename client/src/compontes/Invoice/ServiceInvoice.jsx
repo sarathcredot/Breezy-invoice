@@ -17,7 +17,7 @@ import { useNavigate } from "react-router-dom";
 // import Select from "react-select";
 import axios from "axios"
 import { message } from "antd"
-
+import {toast} from "react-toastify"
 
 
 
@@ -244,6 +244,7 @@ const EditableInvoice = () => {
     invoice.style.position = "static";
     invoice.style.left = "0";
     invoice.style.opacity = "1";
+    let downloadPdf
 
     try {
       const canvas = await html2canvas(invoice, {
@@ -265,6 +266,7 @@ const EditableInvoice = () => {
       const imgHeight = (canvas.height * imgWidth) / canvas.width;
 
       pdf.addImage(imgData, "JPEG", 0, 0, imgWidth, imgHeight);
+      downloadPdf=pdf
 
       invoice.style.position = "absolute";
       invoice.style.left = "-9999px";
@@ -277,13 +279,20 @@ const EditableInvoice = () => {
       formData.append("pdf", pdfBlob, `invoice-${invoiceData.invoiceNumber}.pdf`);
 
 
-      await axios.post("https://breezy-invoice-api.onrender.com/invoicesent", formData)
-      message.success("invoice sent to whatsapp !!")
-      console.log("set")
-      navigate("/home")
+    const result= await axios.post("https://breezy-invoice-api.onrender.com/invoicesent", formData)
+    console.log(result.data)
 
+    alert("invoice sent to whatsapp !! ")
+    navigate("/home")
 
+    
     } catch (error) {
+      
+      // toast.error("invoice whatsapp sent failed !!")
+      alert("invoice sent to whatsapp failed please download !! ")
+      downloadPdf.save(`invoice-${invoiceData.invoiceNumber}.pdf`);
+
+      console.log("err")
       console.error("Error generating PDF:", error);
       message.success("invoice sent failed !!")
     } finally {

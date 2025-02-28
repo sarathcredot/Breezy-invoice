@@ -75,10 +75,12 @@ initializeWhatsApp();
 // ✅ API Routes
 app.get("/", (req, res) => {
   res.send("✅ Server is running...");
+  console.log("test")
 });
 
 // ✅ Send Invoice via WhatsApp
 app.post("/invoicesent", upload.single("pdf"), async (req, res) => {
+  console.log("req")
   try {
     if (!client || !client.info) {
       return res.status(500).json({ success: false, message: "❌ WhatsApp client not connected!" });
@@ -119,6 +121,6 @@ setInterval(async () => {
 }, 600000); // Every 10 minutes
 
 // ✅ Start Server
-app.listen(3018, () => {
+app.listen(3002, () => {
   console.log("🚀 Server started on port 3018");
 });

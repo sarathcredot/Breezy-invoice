@@ -1,0 +1,44 @@
+2025/02/28-12:24:34.853 7d4f Reusing MANIFEST /home/dev/Desktop/Breeze/server/.wwebjs_auth/session-breezy-bot/Default/IndexedDB/https_web.whatsapp.com_0.indexeddb.leveldb/MANIFEST-000001
+2025/02/28-12:24:34.855 7d4f Recovering log #476
+2025/02/28-12:24:34.905 7d4f Reusing old log /home/dev/Desktop/Breeze/server/.wwebjs_auth/session-breezy-bot/Default/IndexedDB/https_web.whatsapp.com_0.indexeddb.leveldb/000476.log 
+2025/02/28-12:24:36.538 7d5e Compacting 1@0 + 1@1 files
+2025/02/28-12:24:36.582 7d5e Generated table #479@0: 21900 keys, 593661 bytes
+2025/02/28-12:24:36.589 7d5e Generated table #480@0: 3928 keys, 65619 bytes
+2025/02/28-12:24:36.589 7d5e Compacted 1@0 + 1@1 files => 659280 bytes
+2025/02/28-12:24:36.592 7d5e compacted to: files[ 0 2 13 0 0 0 0 ]
+2025/02/28-12:24:36.592 7d5e Delete type=2 #477
+2025/02/28-12:24:36.592 7d5e Delete type=2 #467
+2025/02/28-12:24:37.246 7d4c Level-0 table #482: started
+2025/02/28-12:24:37.255 7d4c Level-0 table #482: 85133 bytes OK
+2025/02/28-12:24:37.260 7d4c Delete type=0 #476
+2025/02/28-12:24:37.260 7d4c Manual compaction at level-0 from '\x00\x1a\x00\x00\x00' @ 72057594037927935 : 1 .. '\x00\x1b\x00\x00\x00' @ 0 : 0; will stop at '\x00\x1a\x00\x00\x05' @ 2196429 : 1
+2025/02/28-12:24:37.260 7d4c Compacting 1@0 + 2@1 files
+2025/02/28-12:24:37.352 7d4c Generated table #483@0: 23144 keys, 525083 bytes
+2025/02/28-12:24:37.379 7d4c Generated table #484@0: 3928 keys, 65619 bytes
+2025/02/28-12:24:37.379 7d4c Compacted 1@0 + 2@1 files => 590702 bytes
+2025/02/28-12:24:37.382 7d4c compacted to: files[ 0 2 13 0 0 0 0 ]
+2025/02/28-12:24:37.384 7d4c Delete type=2 #482
+2025/02/28-12:24:37.385 7d4c Manual compaction at level-0 from '\x00\x1a\x00\x00\x05' @ 2196429 : 1 .. '\x00\x1b\x00\x00\x00' @ 0 : 0; will stop at (end)
+2025/02/28-12:24:40.449 7d4c Compacting 1@1 + 8@2 files
+2025/02/28-12:24:40.535 7d4c Generated table #485@1: 70166 keys, 2226813 bytes
+2025/02/28-12:24:40.675 7d4c Generated table #486@1: 53804 keys, 2215181 bytes
+2025/02/28-12:24:40.742 7d4c Generated table #487@1: 16721 keys, 2174361 bytes
+2025/02/28-12:24:40.767 7d4c Generated table #488@1: 881 keys, 2132953 bytes
+2025/02/28-12:24:40.798 7d4c Generated table #489@1: 1971 keys, 2151782 bytes
+2025/02/28-12:24:40.850 7d4c Generated table #490@1: 9879 keys, 2173028 bytes
+2025/02/28-12:24:40.930 7d4c Generated table #491@1: 29509 keys, 2255375 bytes
+2025/02/28-12:24:40.969 7d4c Generated table #492@1: 10546 keys, 2149096 bytes
+2025/02/28-12:24:40.974 7d4c Generated table #493@1: 144 keys, 36055 bytes
+2025/02/28-12:24:40.974 7d4c Compacted 1@1 + 8@2 files => 17514644 bytes
+2025/02/28-12:24:40.977 7d4c compacted to: files[ 0 1 14 0 0 0 0 ]
+2025/02/28-12:24:40.977 7d4c Delete type=2 #468
+2025/02/28-12:24:40.977 7d4c Delete type=2 #469
+2025/02/28-12:24:40.977 7d4c Delete type=2 #475
+2025/02/28-12:24:40.977 7d4c Delete type=2 #472
+2025/02/28-12:24:40.977 7d4c Delete type=2 #479
+2025/02/28-12:24:40.977 7d4c Delete type=2 #480
+2025/02/28-12:24:40.977 7d4c Delete type=2 #483
+2025/02/28-12:24:40.977 7d4c Delete type=2 #471
+2025/02/28-12:24:40.977 7d4c Delete type=2 #473
+2025/02/28-12:24:40.977 7d4c Delete type=2 #474
+2025/02/28-12:24:40.977 7d4c Delete type=2 #470

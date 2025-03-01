@@ -97,7 +97,7 @@ app.post("/invoicesent", upload.single("pdf"), async (req, res) => {
     const message = `📄 Hello, this is your service invoice! Please download: ${fileUrl}`;
     const secondMessage = "🙏 Thanks for choosing Breezy. Have a nice day!";
 
-    // const media = await MessageMedia.fromUrl(fileUrl, { unsafeMime: true });
+    const media = await MessageMedia.fromUrl(fileUrl, { unsafeMime: true });
 
     // await client.sendMessage(chatId, media);
     // await client.sendMessage(chatId, secondMessage);
@@ -107,7 +107,7 @@ app.post("/invoicesent", upload.single("pdf"), async (req, res) => {
       success: true,
       message: "Invoice sent!",
       fileUrl: fileUrl,
-      whatsappLink: `https://wa.me/${phoneNumber}?text=Your invoice: ${fileUrl}`
+      whatsappLink: `https://wa.me/${phoneNumber}?text= This is your invoice: ${media} Thanks for choosing Breezy. Have a nice day!`
     });
   } catch (error) {
     console.error("❌ Error sending WhatsApp message:", error);

@@ -274,21 +274,21 @@ const EditableInvoice = () => {
       invoice.style.left = "-9999px";
       invoice.style.opacity = "0";
 
-      // pdf.save(`invoice-${invoiceData.invoiceNumber}.pdf`);
+      pdf.save(`invoice-${invoiceData.invoiceNumber}.pdf`);
       const pdfBlob = pdf.output("blob");
       const formData = new FormData();
       formData.append("finalData", JSON.stringify(finalData));
       formData.append("pdf", pdfBlob, `invoice-${invoiceData.invoiceNumber}.pdf`);
 
 
-      const result = await axios.post("https://breezy-invoice-api.onrender.com/invoicesent", formData)
-      // console.log(result.data)
+      // const result = await axios.post("https://breezy-invoice-api.onrender.com/invoicesent", formData)
+      // // console.log(result.data)
 
 
 
-      alert("invoice sent to whatsapp !! ")
-      window.open(result.data.whatsappLink, "_blank");
-      navigate("/home")
+      // alert("invoice sent to whatsapp !! ")
+      // window.open(result.data.whatsappLink, "_blank");
+      // navigate("/home")
 
 
     } catch (error) {

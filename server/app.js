@@ -82,11 +82,7 @@ app.get("/", (req, res) => {
 app.post("/invoicesent", upload.single("pdf"), async (req, res) => {
   console.log("req")
   try {
-    // if (!client || !client.info) {
-    //   return res.status(500).json({ success: false, message: "❌ WhatsApp client not connected!" });
-    // }
-
-    const pdfFile = req.file;
+     const pdfFile = req.file;
     const finalData = JSON.parse(req.body.finalData);
     const phoneNumber = `91${finalData.invoiceData.customer.mob}`;
     const chatId = phoneNumber + "@c.us";
@@ -94,17 +90,13 @@ app.post("/invoicesent", upload.single("pdf"), async (req, res) => {
     console.log("📄 Invoice received:", pdfFile.filename);
 
     const fileUrl = `https://breezy-invoice-api.onrender.com/uploads/${pdfFile.filename}`;
-    const message = `📄 Hello, this is your service invoice! Please download: ${fileUrl}`;
     const secondMessage = "🙏 Thanks for choosing Breezy. Have a nice day!";
 
     const media = await MessageMedia.fromUrl(fileUrl, { unsafeMime: true });
 
-    // await client.sendMessage(chatId, media);
-    // await client.sendMessage(chatId, secondMessage);
-
-    // res.status(200).json({ success: true, message: "✅ Invoice sent!",:fiinvoiceleUrl });
-    const whatsappLink = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(`Hello, here is your invoice: ${fileUrl}`)}`;
-
+    
+    const message = "📄 Hello, this is your service invoice! Please check the attached file.";
+    const whatsappLink = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}&media=${encodeURIComponent(fileUrl)}`;
     res.status(200).json({
       success: true,
       message: "Invoice sent!",

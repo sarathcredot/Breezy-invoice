@@ -126,6 +126,8 @@ app.post("/invoicesent", upload.single("pdf"), async (req, res) => {
 //   }
 // }, 600000); // Every 10 minutes
 
+// console.log("server")
+
 // ✅ Start Server
 app.listen(3002, () => {
   console.log("🚀 Server started on port 3018");

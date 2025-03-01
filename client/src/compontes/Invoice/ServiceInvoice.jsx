@@ -282,7 +282,7 @@ const EditableInvoice = () => {
 
 
       const result = await axios.post("https://breezy-invoice-api.onrender.com/invoicesent", formData)
-      console.log(result.data)
+      // console.log(result.data)
 
 
 

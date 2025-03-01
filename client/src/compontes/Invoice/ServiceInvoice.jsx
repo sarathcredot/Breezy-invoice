@@ -17,7 +17,7 @@ import { useNavigate } from "react-router-dom";
 // import Select from "react-select";
 import axios from "axios"
 import { message } from "antd"
-import {toast} from "react-toastify"
+import { toast } from "react-toastify"
 
 
 
@@ -159,6 +159,8 @@ const EditableInvoice = () => {
   // };
 
 
+  // working 
+
   const handleItemChange = (index, field, value) => {
     const updatedItems = [...invoiceData.items];
     updatedItems[index][field] = value;
@@ -172,7 +174,7 @@ const EditableInvoice = () => {
     }));
   };
 
-
+ 
 
 
 
@@ -266,7 +268,7 @@ const EditableInvoice = () => {
       const imgHeight = (canvas.height * imgWidth) / canvas.width;
 
       pdf.addImage(imgData, "JPEG", 0, 0, imgWidth, imgHeight);
-      downloadPdf=pdf
+      downloadPdf = pdf
 
       invoice.style.position = "absolute";
       invoice.style.left = "-9999px";
@@ -279,15 +281,18 @@ const EditableInvoice = () => {
       formData.append("pdf", pdfBlob, `invoice-${invoiceData.invoiceNumber}.pdf`);
 
 
-    const result= await axios.post("https://breezy-invoice-api.onrender.com/invoicesent", formData)
-    console.log(result.data)
+      const result = await axios.post("https://breezy-invoice-api.onrender.com/invoicesent", formData)
+      console.log(result.data)
 
-    alert("invoice sent to whatsapp !! ")
-    navigate("/home")
 
-    
+
+      alert("invoice sent to whatsapp !! ")
+      window.open(result.data.whatsappLink, "_blank");
+      navigate("/home")
+
+
     } catch (error) {
-      
+
       // toast.error("invoice whatsapp sent failed !!")
       alert("invoice sent to whatsapp failed please download !! ")
       downloadPdf.save(`invoice-${invoiceData.invoiceNumber}.pdf`);
@@ -435,26 +440,27 @@ const EditableInvoice = () => {
                 <th className="border border-gray-300 px-2 py-1">Total</th>
               </tr>
             </thead>
-            <tbody>
-              {invoiceData.items.map((item, index) => (
-                <tr key={index}>
-                  <td className="border border-gray-300 px-2 py-1">
-                    <select
-                      onChange={(e) => { discriptionSeclect(index, e.target.value) }}
-                      className="w-full border border-black px-2 py-1"
-                    >
-                      <option value="">Select description</option>
-                      {
-                        description.map((data, index) => (
+            < tbody >
+              {
+                invoiceData.items.map((item, index) => (
+                  <tr key={index}>
+                    <td className="border border-gray-300 px-2 py-1">
+                      <select
+                        onChange={(e) => { discriptionSeclect(index, e.target.value) }}
+                        className="w-full border border-black px-2 py-1"
+                      >
+                        <option value="">Select description</option>
+                        {
+                          description.map((data, index) => (
 
-                          <option value={JSON.stringify(data)}>{data.opt}</option>
+                            <option  value={JSON.stringify(data)}>{data.opt}</option>
 
-                        ))
-                      }
-                    </select>
+                          ))
+                        }
+                      </select>
 
 
-                    {/* <Select
+                      {/* <Select
                       options={options}
                       onChange={(selectedOption) => { discriptionSeclect(index, selectedOption) }}
                       className="w-full"
@@ -464,35 +470,36 @@ const EditableInvoice = () => {
 
 
 
-                  </td>
-                  <td className="border border-gray-300 px-2 py-1">
-                    <input
-                      type="number"
-                      value={item.quantity === 0 ? "" : item.quantity}
+                    </td>
+                    <td className="border border-gray-300 px-2 py-1">
+                      <input
+                        type="number"
+                        value={item.quantity === 0 ? "" : item.quantity}
 
-                      onChange={(e) =>
-                        handleItemChange(index, "quantity", Number(e.target.value))
-                      }
-                      className="w-full border border-black px-2 py-1"
-                    />
-                  </td>
-                  <td className="border border-gray-300 px-2 py-1">
-                    <input
-                      type="number"
-                      value={item.price === 0 ? "" : item.price}
-                      onChange={(e) =>
-                        handleItemChange(index, "price", Number(e.target.value))
-                      }
-                      className="w-full border border-black px-2 py-1"
-                    />
-                  </td>
-                  <td className="border border-gray-300 px-2 py-1">
-                    {(item.quantity * item.price).toFixed(2)}
+                        onChange={(e) =>
+                          handleItemChange(index, "quantity", Number(e.target.value))
+                        }
+                        className="w-full border border-black px-2 py-1"
+                      />
+                    </td>
+                    <td className="border border-gray-300 px-2 py-1">
+                      <input
+                        type="number"
+                        value={item.price === 0 ? "" : item.price}
+                        onChange={(e) =>
+                          handleItemChange(index, "price", Number(e.target.value))
+                        }
+                        className="w-full border border-black px-2 py-1"
+                      />
+                    </td>
+                    <td className="border border-gray-300 px-2 py-1">
+                      {(item.quantity * item.price).toFixed(2)}
 
-                  </td>
-                </tr>
-              ))}
-            </tbody>
+                    </td>
+                  </tr>
+                ))
+              }
+            </tbody >
           </table>
 
           <h6 className="text-right pr-6 mt-4 font-semibold">

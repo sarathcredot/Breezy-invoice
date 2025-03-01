@@ -93,7 +93,7 @@ app.post("/invoicesent", upload.single("pdf"), async (req, res) => {
 
     console.log("📄 Invoice received:", pdfFile.filename);
 
-    const fileUrl = `${pdfFile.filename}`;
+    const fileUrl = `https://breezy-invoice-api.onrender.com/uploads/${pdfFile.filename}`;
     const message = `📄 Hello, this is your service invoice! Please download: ${fileUrl}`;
     const secondMessage = "🙏 Thanks for choosing Breezy. Have a nice day!";
 

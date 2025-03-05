@@ -70,7 +70,7 @@ async function initializeWhatsApp() {
 }
 
 // ✅ Start WhatsApp Client
-// initializeWhatsApp();
+initializeWhatsApp();
 
 // ✅ API Routes
 app.get("/", (req, res) => {
@@ -82,7 +82,7 @@ app.get("/", (req, res) => {
 app.post("/invoicesent", upload.single("pdf"), async (req, res) => {
   console.log("req")
   try {
-     const pdfFile = req.file;
+    const pdfFile = req.file;
     const finalData = JSON.parse(req.body.finalData);
     const phoneNumber = `91${finalData.invoiceData.customer.mob}`;
     const chatId = phoneNumber + "@c.us";
@@ -90,20 +90,24 @@ app.post("/invoicesent", upload.single("pdf"), async (req, res) => {
     console.log("📄 Invoice received:", pdfFile.filename);
 
     const fileUrl = `https://breezy-invoice-api.onrender.com/uploads/${pdfFile.filename}`;
-    const secondMessage = "🙏 Thanks for choosing Breezy. Have a nice day!";
+    const secondMessage = "Thanks for choosing Breezy. Have a nice day!";
 
     const media = await MessageMedia.fromUrl(fileUrl, { unsafeMime: true });
 
-    
+
     const message = "📄 Hello, this is your service invoice! Please check the attached file.";
-    const whatsappLink = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}&media=${encodeURIComponent(fileUrl)}`;
+
+    await client.sendMessage(chatId, message);
+    await client.sendMessage(chatId, media);
+    await client.sendMessage(chatId, secondMessage);
+
+    console.log("invoice sented !!")
+
     res.status(200).json({
       success: true,
       message: "Invoice sent!",
       fileUrl: fileUrl,
-      whatsappLink: whatsappLink
-      
-    });
+     });
   } catch (error) {
     console.error("❌ Error sending WhatsApp message:", error);
     res.status(500).json({ success: false, message: "❌ Invoice send failed!", error });
@@ -111,15 +115,15 @@ app.post("/invoicesent", upload.single("pdf"), async (req, res) => {
 });
 
 // ✅ Auto-reconnect & Keep Alive every 10 minutes
-// setInterval(async () => {
-//   console.log("🔄 Checking WhatsApp connection...");
-//   if (!client || !client.info) {
-//     console.log("❌ WhatsApp client is disconnected. Restarting...");
-//     initializeWhatsApp();
-//   } else {
-//     console.log("✅ WhatsApp client is active.");
-//   }
-// }, 600000); // Every 10 minutes
+setInterval(async () => {
+  console.log("🔄 Checking WhatsApp connection...");
+  if (!client || !client.info) {
+    console.log("❌ WhatsApp client is disconnected. Restarting...");
+    initializeWhatsApp();
+  } else {
+    console.log("✅ WhatsApp client is active.");
+  }
+}, 600000); // Every 10 minutes
 
 // console.log("server")
 

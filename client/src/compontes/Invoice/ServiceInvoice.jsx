@@ -112,6 +112,11 @@ const EditableInvoice = () => {
       opt: "Ac refitting",
       price: 1800,
       qt: 1
+    },
+    {
+      opt: "Other Expense",
+      price: 0,
+      qt: 1
     }
 
 

@@ -73,6 +73,11 @@ const EditableInvoice = () => {
       qt: 1
     },
     {
+      opt: "Gas Charging",
+      price: 0,
+      qt: 1
+    },
+    {
       opt: "W/M motor change",
       price: 0,
       qt: 1

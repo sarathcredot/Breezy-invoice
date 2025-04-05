@@ -6,7 +6,7 @@ import { useState } from 'react';
 import jsPDF from "jspdf";
 import html2canvas from "html2canvas";
 import Navbar from "../Home/Navbar"
-import { useLocation,useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 
 
@@ -111,7 +111,7 @@ function Prviewinvoice() {
   };
 
   const location = useLocation();
-  const navigate=useNavigate()
+  const navigate = useNavigate()
   console.log("props", location.state)
 
   const { invoiceData,
@@ -163,7 +163,7 @@ function Prviewinvoice() {
         tottalAmount,
         subtotal
       }
-    
+
 
       const pdfBlob = pdf.output("blob");
       const formData = new FormData();
@@ -187,7 +187,7 @@ function Prviewinvoice() {
 
       console.log("err")
       console.error("Error generating PDF:", error);
-      
+      navigate("/home")
     } finally {
       // Re-hide the PDF section
       invoice.style.position = "absolute";

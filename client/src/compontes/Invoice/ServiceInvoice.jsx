@@ -328,14 +328,14 @@ const EditableInvoice = () => {
       invoice.style.left = "-9999px";
       invoice.style.opacity = "0";
 
-      pdf.save(`invoice-${invoiceData.invoiceNumber}.pdf`);
+      // pdf.save(`invoice-${invoiceData.invoiceNumber}.pdf`);
 
       const pdfBlob = pdf.output("blob");
       const formData = new FormData();
       formData.append("finalData", JSON.stringify(finalData));
       formData.append("pdf", pdfBlob, `invoice-${invoiceData.invoiceNumber}.pdf`);
- 
-       const result = await axios.post("https://breezy-invoice-api.onrender.com/api/invoice/serviceinvoice", formData)
+
+      const result = await axios.post("https://breezy-invoice-api.onrender.com/api/invoice/serviceinvoice", formData)
       // const result = await axios.post("http://localhost:3018/api/invoice/serviceinvoice", formData)
 
       // console.log(result.data)
@@ -348,11 +348,13 @@ const EditableInvoice = () => {
 
       // toast.error("invoice whatsapp sent failed !!")
       alert("invoice sent to whatsapp failed please download !! ")
-      // downloadPdf.save(`invoice-${invoiceData.invoiceNumber}.pdf`);
+      downloadPdf.save(`invoice-${invoiceData.invoiceNumber}.pdf`);
 
       console.log("err")
       console.error("Error generating PDF:", error);
-      message.success("invoice sent failed !!")
+      // message.success("invoice sent failed !!")
+      navigate("/home")
+
     } finally {
       // Re-hide the PDF section
       invoice.style.position = "absolute";

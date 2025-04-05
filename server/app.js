@@ -2,17 +2,22 @@ const express = require("express");
 const cors = require("cors");
 const { Client, LocalAuth, MessageMedia } = require("whatsapp-web.js");
 const qrcode = require("qrcode-terminal");
-const mongoose = require("mongoose");
+// const mongoose = require("mongoose");
 const multer = require("multer");
 const { MongoStore } = require("wwebjs-mongo");
+import {connect} from "./src/config/DB.js"
 
 // ✅ Connect to MongoDB
-mongoose.connect("mongodb+srv://sarathsarath93366:sarath1937@cluster0.c3sdg.mongodb.net/breezy", {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-})
-  .then(() => console.log("✅ Connected to MongoDB"))
-  .catch((err) => console.error("❌ MongoDB Connection Error:", err));
+// mongoose.connect("mongodb+srv://sarathsarath93366:sarath1937@cluster0.c3sdg.mongodb.net/breezy", {
+//   useNewUrlParser: true,
+//   useUnifiedTopology: true,
+// })
+//   .then(() => console.log("✅ Connected to MongoDB"))
+//   .catch((err) => console.error("❌ MongoDB Connection Error:", err));
+
+// Database connecting 
+
+connect()
 
 const sessionStore = new MongoStore({ mongoose: mongoose });
 

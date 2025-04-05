@@ -36,6 +36,9 @@ const EditableInvoice = () => {
       { description: "", quantity: 0, price: 0, total: 0 },
       { description: "", quantity: 0, price: 0, total: 0 },
       { description: "", quantity: 0, price: 0, total: 0 },
+      { description: "", quantity: 0, price: 0, total: 0 },
+      { description: "", quantity: 0, price: 0, total: 0 },
+      { description: "", quantity: 0, price: 0, total: 0 },
     ],
     total: 0,
   });
@@ -100,6 +103,47 @@ const EditableInvoice = () => {
     {
       opt: "TV service",
       price: 700,
+      qt: 1
+    },
+    {
+      opt: "Refrigerator Compressor change",
+      price: 700,
+      qt: 1
+    },
+    {
+      opt: "Compressor",
+      price: 4500,
+      qt: 1
+    },
+    {
+      opt: "Filter",
+      price: 350,
+      qt: 1
+    },
+    {
+      opt: "Transporting",
+      price: 150,
+      qt: 1
+    },
+    {
+      opt: "Label Charge",
+      price: 1200,
+      qt: 1
+    },
+    {
+      opt: "Gas",
+      price: 1800,
+      qt: 1
+    },
+
+    {
+      opt: "Fanmotor changed",
+      price: 1200,
+      qt: 1
+    },
+    {
+      opt: "Freezer",
+      price: 2000,
       qt: 1
     },
     {
@@ -284,19 +328,17 @@ const EditableInvoice = () => {
       invoice.style.left = "-9999px";
       invoice.style.opacity = "0";
 
-      // pdf.save(`invoice-${invoiceData.invoiceNumber}.pdf`);
+      pdf.save(`invoice-${invoiceData.invoiceNumber}.pdf`);
 
       const pdfBlob = pdf.output("blob");
       const formData = new FormData();
       formData.append("finalData", JSON.stringify(finalData));
       formData.append("pdf", pdfBlob, `invoice-${invoiceData.invoiceNumber}.pdf`);
+ 
+       // const result = await axios.post("https://breezy-invoice-api.onrender.com/api/invoice/serviceinvoice", formData)
+      // const result = await axios.post("http://localhost:3018/api/invoice/serviceinvoice", formData)
 
-
-      const result = await axios.post("https://breezy-invoice-api.onrender.com/invoicesent", formData)
       // console.log(result.data)
-
-
-
       alert("invoice sent to whatsapp !! ")
       // window.open(result.data.whatsappLink, "_blank");
       navigate("/home")
@@ -306,7 +348,7 @@ const EditableInvoice = () => {
 
       // toast.error("invoice whatsapp sent failed !!")
       alert("invoice sent to whatsapp failed please download !! ")
-      downloadPdf.save(`invoice-${invoiceData.invoiceNumber}.pdf`);
+      // downloadPdf.save(`invoice-${invoiceData.invoiceNumber}.pdf`);
 
       console.log("err")
       console.error("Error generating PDF:", error);
@@ -785,7 +827,7 @@ const EditableInvoice = () => {
 
         {/* <div className='w-full h-[150px]  flex justify-end  ' > */}
 
-        <img className='w-[200px] h-[230px] pb-[50px] absolute bottom-[-300px] right-[10px] ' src="./seal.png" alt="seal" />
+        <img className='w-[200px] h-[230px] pb-[50px] absolute bottom-[-250px] right-[10px] ' src="./seal.png" alt="seal" />
 
         {/* </div> */}
 

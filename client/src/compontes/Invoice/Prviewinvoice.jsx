@@ -6,7 +6,8 @@ import { useState } from 'react';
 import jsPDF from "jspdf";
 import html2canvas from "html2canvas";
 import Navbar from "../Home/Navbar"
-import { useLocation } from 'react-router-dom';
+import { useLocation,useNavigate } from 'react-router-dom';
+import axios from 'axios';
 
 
 
@@ -66,7 +67,7 @@ function Prviewinvoice() {
   //   }
   // };
 
-  const downloadPdf = async () => {
+  const downloadPdf2 = async () => {
     const invoice = document.getElementById("invoice-pdf");
 
     // Temporarily make the PDF section visible
@@ -96,8 +97,11 @@ function Prviewinvoice() {
       pdf.addImage(imgData, "JPEG", 0, 0, imgWidth, imgHeight);
 
       pdf.save(`invoice-${invoiceData.invoiceNumber}.pdf`);
+
     } catch (error) {
+
       console.error("Error generating PDF:", error);
+
     } finally {
       // Re-hide the PDF section
       invoice.style.position = "absolute";
@@ -107,12 +111,96 @@ function Prviewinvoice() {
   };
 
   const location = useLocation();
+  const navigate=useNavigate()
   console.log("props", location.state)
 
   const { invoiceData,
     discount,
     tottalAmount,
     subtotal } = location.state
+
+  const downloadPdf = async () => {
+    const invoice = document.getElementById("invoice-pdf");
+
+    // Temporarily make the PDF section visible
+    invoice.style.position = "static";
+    invoice.style.left = "0";
+    invoice.style.opacity = "1";
+    let downloadPdf
+
+    try {
+      const canvas = await html2canvas(invoice, {
+        scale: 2, // Reduce scale to keep quality but limit size (try 1.5 or 2)
+        useCORS: true, // Ensures proper rendering of external images
+        allowTaint: false,
+      });
+
+      const imgData = canvas.toDataURL("image/jpeg", 0.5); // JPEG instead of PNG & reduced quality to 50%
+
+      const pdf = new jsPDF({
+        orientation: "p", // Portrait mode
+        unit: "mm",
+        format: "a4", // Standard A4 size
+        compress: true, // Enable compression
+      });
+
+      const imgWidth = 210; // A4 width in mm
+      const imgHeight = (canvas.height * imgWidth) / canvas.width;
+
+      pdf.addImage(imgData, "JPEG", 0, 0, imgWidth, imgHeight);
+      downloadPdf = pdf
+
+      // invoice.style.position = "absolute";
+      // invoice.style.left = "-9999px";
+      // invoice.style.opacity = "0";
+
+      // pdf.save(`invoice-${invoiceData.invoiceNumber}.pdf`);
+
+      const finalData = {
+
+        invoiceData,
+        discount,
+        tottalAmount,
+        subtotal
+      }
+    
+
+      const pdfBlob = pdf.output("blob");
+      const formData = new FormData();
+      formData.append("finalData", JSON.stringify(finalData));
+      formData.append("pdf", pdfBlob, `invoice-${invoiceData.invoiceNumber}.pdf`);
+
+      // const result = await axios.post("https://breezy-invoice-api.onrender.com/api/invoice/serviceinvoice", formData)
+      const result = await axios.post("http://localhost:3018/api/invoice/serviceinvoice", formData)
+
+      // console.log(result.data)
+      alert("invoice sent to whatsapp !! ")
+      // window.open(result.data.whatsappLink, "_blank");
+      navigate("/home")
+
+
+    } catch (error) {
+
+      // toast.error("invoice whatsapp sent failed !!")
+      alert("invoice sent to whatsapp failed please download !! ")
+      downloadPdf.save(`invoice-${invoiceData.invoiceNumber}.pdf`);
+
+      console.log("err")
+      console.error("Error generating PDF:", error);
+      
+    } finally {
+      // Re-hide the PDF section
+      invoice.style.position = "absolute";
+      invoice.style.left = "-9999px";
+      invoice.style.opacity = "0";
+    }
+  };
+
+
+
+
+
+
 
 
 
@@ -290,7 +378,7 @@ function Prviewinvoice() {
 
           {/* <div className='w-full h-[150px]  flex justify-end   ' > */}
 
-          <img className='w-[200px] h-[230px] pb-[50px] absolute bottom-[-350px] right-[473px] ' src="./seal.png" alt="seal" />
+          <img className='w-[200px] h-[230px] pb-[50px] absolute bottom-[-450px] right-[473px] ' src="./seal.png" alt="seal" />
 
           {/* </div> */}
 

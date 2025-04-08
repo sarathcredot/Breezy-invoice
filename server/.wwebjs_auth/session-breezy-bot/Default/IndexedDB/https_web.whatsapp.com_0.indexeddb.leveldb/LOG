@@ -1,14 +1,3 @@
-2025/04/05-16:13:25.366 13a89 Reusing MANIFEST /home/dev/Desktop/Breeze/server/.wwebjs_auth/session-breezy-bot/Default/IndexedDB/https_web.whatsapp.com_0.indexeddb.leveldb/MANIFEST-000001
-2025/04/05-16:13:25.367 13a89 Recovering log #2742
-2025/04/05-16:13:25.451 13a89 Reusing old log /home/dev/Desktop/Breeze/server/.wwebjs_auth/session-breezy-bot/Default/IndexedDB/https_web.whatsapp.com_0.indexeddb.leveldb/002742.log 
-2025/04/05-16:13:26.983 13a8e Level-0 table #2765: started
-2025/04/05-16:13:27.009 13a8e Level-0 table #2765: 1114568 bytes OK
-2025/04/05-16:13:27.013 13a8e Delete type=0 #2742
-2025/04/05-16:13:27.013 13a8e Manual compaction at level-0 from '\x00t\x00\x00\x00' @ 72057594037927935 : 1 .. '\x00u\x00\x00\x00' @ 0 : 0; will stop at '\x00t\x00\x00\x05' @ 6945330 : 1
-2025/04/05-16:13:27.013 13a8e Compacting 1@0 + 0@1 files
-2025/04/05-16:13:27.030 13a8e Generated table #2766@0: 13587 keys, 265265 bytes
-2025/04/05-16:13:27.042 13a8e Generated table #2767@0: 4253 keys, 328181 bytes
-2025/04/05-16:13:27.042 13a8e Compacted 1@0 + 0@1 files => 593446 bytes
-2025/04/05-16:13:27.046 13a8e compacted to: files[ 0 2 17 0 0 0 0 ]
-2025/04/05-16:13:27.046 13a8e Delete type=2 #2765
-2025/04/05-16:13:27.046 13a8e Manual compaction at level-0 from '\x00t\x00\x00\x05' @ 6945330 : 1 .. '\x00u\x00\x00\x00' @ 0 : 0; will stop at (end)
+2025/04/08-10:13:53.102 2bba Reusing MANIFEST /home/dev/Desktop/Breeze/server/.wwebjs_auth/session-breezy-bot/Default/IndexedDB/https_web.whatsapp.com_0.indexeddb.leveldb/MANIFEST-000001
+2025/04/08-10:13:53.102 2bba Recovering log #2834
+2025/04/08-10:13:53.128 2bba Reusing old log /home/dev/Desktop/Breeze/server/.wwebjs_auth/session-breezy-bot/Default/IndexedDB/https_web.whatsapp.com_0.indexeddb.leveldb/002834.log 

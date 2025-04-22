@@ -9,11 +9,12 @@ const connectionFnc=async()=>{
        try {
 
        await mongoose.connect("mongodb+srv://sarathsarath93366:sarath1937@cluster0.c3sdg.mongodb.net/breezy")
-        console.log("DB conncted")
+       
+       console.log("DB conncted")
         
        } catch (error) {
         
-           console.log("DB connecting failed")
+           console.log("DB connecting failed",error)
        }
 }
 

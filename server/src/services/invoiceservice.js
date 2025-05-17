@@ -28,8 +28,8 @@ export const invoiceService = {
 
 
                 const secondMessage = `Thank you for choosing Breezy! are you satisfied with our service. 
-                Share your experience with a Google review using this link: https://shorturl.at/UD3nY. 
-                Save our number for future connections!`;
+                                       Share your experience with a Google review using this link: https://g.co/kgs/6GByT1a. 
+                                       Save our number for future connections!`;
 
                 const media = await MessageMedia.fromUrl(fileUrl, { unsafeMime: true });
 

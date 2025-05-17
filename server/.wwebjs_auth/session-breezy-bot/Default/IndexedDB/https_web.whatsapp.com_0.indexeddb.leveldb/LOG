@@ -1,26 +1,76 @@
-2025/05/17-15:58:31.683 380c Reusing MANIFEST /home/dev/Desktop/Breeze/server/.wwebjs_auth/session-breezy-bot/Default/IndexedDB/https_web.whatsapp.com_0.indexeddb.leveldb/MANIFEST-000001
-2025/05/17-15:58:31.684 380c Recovering log #1092
-2025/05/17-15:58:31.702 380c Reusing old log /home/dev/Desktop/Breeze/server/.wwebjs_auth/session-breezy-bot/Default/IndexedDB/https_web.whatsapp.com_0.indexeddb.leveldb/001092.log 
-2025/05/17-15:58:33.533 380d Level-0 table #1105: started
-2025/05/17-15:58:33.538 380d Level-0 table #1105: 200640 bytes OK
-2025/05/17-15:58:33.541 380d Delete type=0 #1092
-2025/05/17-15:58:33.541 380d Manual compaction at level-0 from '\x00%\x00\x00\x00' @ 72057594037927935 : 1 .. '\x00&\x00\x00\x00' @ 0 : 0; will stop at '\x00%\x00\x00\x05' @ 4121040 : 1
-2025/05/17-15:58:33.541 380d Compacting 1@0 + 1@1 files
-2025/05/17-15:58:33.549 380d Generated table #1106@0: 3789 keys, 75264 bytes
-2025/05/17-15:58:33.551 380d Generated table #1107@0: 48 keys, 3756 bytes
-2025/05/17-15:58:33.552 380d Generated table #1108@0: 52 keys, 3562 bytes
-2025/05/17-15:58:33.552 380d Compacted 1@0 + 1@1 files => 82582 bytes
-2025/05/17-15:58:33.554 380d compacted to: files[ 0 3 26 0 0 0 0 ]
-2025/05/17-15:58:33.554 380d Delete type=2 #1105
-2025/05/17-15:58:33.555 380d Manual compaction at level-0 from '\x00%\x00\x00\x05' @ 4121040 : 1 .. '\x00&\x00\x00\x00' @ 0 : 0; will stop at (end)
-2025/05/17-15:58:35.487 380d Compacting 1@1 + 3@2 files
-2025/05/17-15:58:35.564 380d Generated table #1109@1: 80254 keys, 2226451 bytes
-2025/05/17-15:58:35.616 380d Generated table #1110@1: 57935 keys, 2226065 bytes
-2025/05/17-15:58:35.676 380d Generated table #1111@1: 50873 keys, 2190660 bytes
-2025/05/17-15:58:35.676 380d Compacted 1@1 + 3@2 files => 6643176 bytes
-2025/05/17-15:58:35.677 380d compacted to: files[ 0 2 26 0 0 0 0 ]
-2025/05/17-15:58:35.678 380d Delete type=2 #1106
-2025/05/17-15:58:35.678 380d Delete type=2 #1096
-2025/05/17-15:58:35.678 380d Delete type=2 #1098
-2025/05/17-15:58:35.678 380d Delete type=2 #1099
-2025/05/17-15:58:35.678 380d Delete type=2 #1097
+2025/05/17-17:09:03.061 51c3 Reusing MANIFEST /home/dev/Desktop/Breeze/server/.wwebjs_auth/session-breezy-bot/Default/IndexedDB/https_web.whatsapp.com_0.indexeddb.leveldb/MANIFEST-000001
+2025/05/17-17:09:03.064 51c3 Recovering log #1293
+2025/05/17-17:09:03.224 51c3 Reusing old log /home/dev/Desktop/Breeze/server/.wwebjs_auth/session-breezy-bot/Default/IndexedDB/https_web.whatsapp.com_0.indexeddb.leveldb/001293.log 
+2025/05/17-17:09:05.939 51c6 Level-0 table #1320: started
+2025/05/17-17:09:05.977 51c6 Level-0 table #1320: 623223 bytes OK
+2025/05/17-17:09:05.982 51c6 Delete type=0 #1293
+2025/05/17-17:09:05.983 51c6 Manual compaction at level-0 from '\x000\x00\x00\x00' @ 72057594037927935 : 1 .. '\x001\x00\x00\x00' @ 0 : 0; will stop at '\x000\x00\x00\x05' @ 4246180 : 1
+2025/05/17-17:09:05.983 51c6 Compacting 1@0 + 0@1 files
+2025/05/17-17:09:06.032 51c6 Generated table #1321@0: 10143 keys, 211402 bytes
+2025/05/17-17:09:06.041 51c6 Generated table #1322@0: 604 keys, 64642 bytes
+2025/05/17-17:09:06.048 51c6 Generated table #1323@0: 838 keys, 25416 bytes
+2025/05/17-17:09:06.048 51c6 Compacted 1@0 + 0@1 files => 301460 bytes
+2025/05/17-17:09:06.053 51c6 compacted to: files[ 0 3 26 0 0 0 0 ]
+2025/05/17-17:09:06.056 51c6 Delete type=2 #1320
+2025/05/17-17:09:06.057 51c0 Manual compaction at level-0 from '\x000\x00\x00\x05' @ 4246180 : 1 .. '\x001\x00\x00\x00' @ 0 : 0; will stop at (end)
+2025/05/17-17:09:09.251 51c1 Compacting 1@1 + 10@2 files
+2025/05/17-17:09:09.283 51c1 Generated table #1324@1: 2942 keys, 2159461 bytes
+2025/05/17-17:09:09.309 51c1 Generated table #1325@1: 2393 keys, 2152688 bytes
+2025/05/17-17:09:09.370 51c1 Generated table #1326@1: 17702 keys, 2185067 bytes
+2025/05/17-17:09:09.468 51c1 Generated table #1327@1: 25930 keys, 2273076 bytes
+2025/05/17-17:09:09.537 51c1 Generated table #1328@1: 32232 keys, 2252608 bytes
+2025/05/17-17:09:09.576 51c1 Generated table #1329@1: 10341 keys, 2158379 bytes
+2025/05/17-17:09:09.605 51c1 Generated table #1330@1: 3239 keys, 2123493 bytes
+2025/05/17-17:09:09.665 51c1 Generated table #1331@1: 42583 keys, 2174872 bytes
+2025/05/17-17:09:09.774 51c1 Generated table #1332@1: 105266 keys, 2254960 bytes
+2025/05/17-17:09:09.883 51c1 Generated table #1333@1: 105722 keys, 2256005 bytes
+2025/05/17-17:09:09.888 51c1 Generated table #1334@1: 2856 keys, 60673 bytes
+2025/05/17-17:09:09.888 51c1 Compacted 1@1 + 10@2 files => 22051282 bytes
+2025/05/17-17:09:09.889 51c1 compacted to: files[ 0 2 27 0 0 0 0 ]
+2025/05/17-17:09:09.890 51c1 Delete type=2 #1299
+2025/05/17-17:09:09.890 51c1 Delete type=2 #1300
+2025/05/17-17:09:09.890 51c1 Delete type=2 #1298
+2025/05/17-17:09:09.890 51c1 Delete type=2 #1302
+2025/05/17-17:09:09.890 51c1 Delete type=2 #1306
+2025/05/17-17:09:09.890 51c1 Delete type=2 #1305
+2025/05/17-17:09:09.890 51c1 Delete type=2 #1303
+2025/05/17-17:09:09.890 51c1 Delete type=2 #1304
+2025/05/17-17:09:09.890 51c1 Delete type=2 #1322
+2025/05/17-17:09:09.890 51c1 Delete type=2 #1307
+2025/05/17-17:09:09.890 51c1 Delete type=2 #1301
+2025/05/17-17:09:10.084 51c6 Compacting 1@1 + 10@2 files
+2025/05/17-17:09:10.168 51c6 Generated table #1335@1: 87437 keys, 2237273 bytes
+2025/05/17-17:09:10.238 51c6 Generated table #1336@1: 60799 keys, 2232369 bytes
+2025/05/17-17:09:10.309 51c6 Generated table #1337@1: 50934 keys, 2214115 bytes
+2025/05/17-17:09:10.336 51c6 Generated table #1338@1: 3838 keys, 2159659 bytes
+2025/05/17-17:09:10.358 51c6 Generated table #1339@1: 1681 keys, 2142367 bytes
+2025/05/17-17:09:10.378 51c6 Generated table #1340@1: 1243 keys, 2133854 bytes
+2025/05/17-17:09:10.393 51c6 Generated table #1341@1: 341 keys, 2127604 bytes
+2025/05/17-17:09:10.408 51c6 Generated table #1342@1: 343 keys, 2124311 bytes
+2025/05/17-17:09:10.423 51c6 Generated table #1343@1: 317 keys, 2118913 bytes
+2025/05/17-17:09:10.425 51c6 Generated table #1344@1: 16 keys, 94055 bytes
+2025/05/17-17:09:10.425 51c6 Compacted 1@1 + 10@2 files => 19584520 bytes
+2025/05/17-17:09:10.427 51c6 compacted to: files[ 0 1 27 0 0 0 0 ]
+2025/05/17-17:09:10.428 51c6 Delete type=2 #1282
+2025/05/17-17:09:10.428 51c6 Delete type=2 #1286
+2025/05/17-17:09:10.428 51c6 Delete type=2 #1310
+2025/05/17-17:09:10.428 51c6 Delete type=2 #1284
+2025/05/17-17:09:10.428 51c6 Delete type=2 #1283
+2025/05/17-17:09:10.428 51c6 Delete type=2 #1313
+2025/05/17-17:09:10.428 51c6 Delete type=2 #1312
+2025/05/17-17:09:10.428 51c6 Delete type=2 #1321
+2025/05/17-17:09:10.428 51c6 Delete type=2 #1309
+2025/05/17-17:09:10.428 51c6 Delete type=2 #1311
+2025/05/17-17:09:10.428 51c6 Delete type=2 #1285
+2025/05/17-17:09:25.654 51c1 Compacting 1@1 + 4@2 files
+2025/05/17-17:09:25.793 51c1 Generated table #1345@1: 105229 keys, 2254984 bytes
+2025/05/17-17:09:25.909 51c1 Generated table #1346@1: 105046 keys, 2256013 bytes
+2025/05/17-17:09:26.017 51c1 Generated table #1347@1: 104326 keys, 2254728 bytes
+2025/05/17-17:09:26.081 51c1 Generated table #1348@1: 59754 keys, 1305689 bytes
+2025/05/17-17:09:26.081 51c1 Compacted 1@1 + 4@2 files => 8071414 bytes
+2025/05/17-17:09:26.084 51c1 compacted to: files[ 0 0 27 0 0 0 0 ]
+2025/05/17-17:09:26.084 51c1 Delete type=2 #1323
+2025/05/17-17:09:26.084 51c1 Delete type=2 #1314
+2025/05/17-17:09:26.084 51c1 Delete type=2 #1317
+2025/05/17-17:09:26.084 51c1 Delete type=2 #1316
+2025/05/17-17:09:26.084 51c1 Delete type=2 #1315

@@ -27,12 +27,12 @@ export const invoiceService = {
                 const fileUrl = `https://breezy-invoice-api.onrender.com/uploads/${pdfFile.filename}`;
 
 
-                const secondMessage = `Thank you for choosing Breezy!\n\nAre you satisfied with our service?\n🔵Share your experience with a Google review:\nhttps://g.co/kgs/\u200B6GByT1a\n\n🔵Save our number for future connections!`;
+                const secondMessage = `Share your experience with a Google review:\nhttps://g.co/kgs/iPvn627\n\n6282309320 save this number for future connections!`;
 
                 const media = await MessageMedia.fromUrl(fileUrl, { unsafeMime: true });
 
 
-                const message = "Breezy Cooling Solution, this is your service invoice! Please check.";
+                const message = "*Breezy Cooling Solution ❄️*\nThis is your service invoice! Please check.";
 
                 await client.sendMessage(chatId, message);
                 await client.sendMessage(chatId, media);

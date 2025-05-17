@@ -222,7 +222,7 @@ function Prviewinvoice() {
       </div>
 
 
-      <div className='  shadow-[0px_4px_10px_rgba(0,0,0,0.25)]'
+      <div className=' shadow-[0px_4px_10px_rgba(0,0,0,0.25)]'
         style={{
 
           width: "230mm",
@@ -252,6 +252,22 @@ function Prviewinvoice() {
             fontFamily: "Arial, sans-serif",
             margin: "20px auto", // Center align
             display: "block",
+            backgroundImage: "url('seal.png')",
+            backgroundRepeat: "no-repeat",
+            backgroundPosition: "center",
+            backgroundSize: "50% auto",
+            pointerEvents: "none",
+            "::before": {
+              content: '""',
+              position: "absolute",
+              top: 0,
+              left: 0,
+              right: 0,
+              bottom: 0,
+              backgroundImage: "inherit",
+              opacity: 0.3, // Adjust this value (0.1-0.3)
+              pointerEvents: "none"
+            }
 
           }}
         >
@@ -378,7 +394,6 @@ function Prviewinvoice() {
 
           {/* <div className='w-full h-[150px]  flex justify-end   ' > */}
 
-          <img className='w-[200px] h-[230px] pb-[50px] absolute bottom-[-450px] right-[473px] ' src="./seal.png" alt="seal" />
 
           {/* </div> */}
 

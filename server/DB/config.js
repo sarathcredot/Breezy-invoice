@@ -1,6 +1,7 @@
 
 
 const mongoose=require("mongoose")
+require('dotenv').config()
 
 
 
@@ -8,7 +9,7 @@ const connectionFnc=async()=>{
 
        try {
 
-       await mongoose.connect("mongodb+srv://sarathsarath93366:sarath1937@cluster0.c3sdg.mongodb.net/breezy")
+       await mongoose.connect(process.env.MONGO_URI)
        
        console.log("DB conncted")
         

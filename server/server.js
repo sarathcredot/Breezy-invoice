@@ -62,7 +62,7 @@ async function initializeWhatsApp() {
     });
 
     client.on("message", async (message) => {
-        console.log("📩 New message received:", message.body);
+        console.log("📩 New message received:");
     });
 
     client.on("disconnected", async (reason) => {

@@ -27,9 +27,7 @@ export const invoiceService = {
                 const fileUrl = `https://breezy-invoice-api.onrender.com/uploads/${pdfFile.filename}`;
 
 
-                const secondMessage = `Thank you for choosing Breezy! are you satisfied with our service. 
-                                       Share your experience with a Google review using this link: https://g.co/kgs/6GByT1a. 
-                                       Save our number for future connections!`;
+                const secondMessage = `Thank you for choosing Breezy!\n\nAre you satisfied with our service?\n🔵Share your experience with a Google review:\nhttps://g.co/kgs/\u200B6GByT1a\n\n🔵Save our number for future connections!`;
 
                 const media = await MessageMedia.fromUrl(fileUrl, { unsafeMime: true });
 

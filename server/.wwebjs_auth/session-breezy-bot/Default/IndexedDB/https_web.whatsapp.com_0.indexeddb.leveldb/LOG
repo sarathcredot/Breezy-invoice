@@ -262,3 +262,11 @@
 2025/05/21-15:15:09.971 3df5 Delete type=2 #81
 2025/05/21-15:15:09.971 3df5 Delete type=2 #80
 2025/05/21-15:15:09.971 3df5 Delete type=2 #83
+2025/05/21-15:15:56.809 3df5 Level-0 table #87: started
+2025/05/21-15:15:56.837 3df5 Level-0 table #87: 1002695 bytes OK
+2025/05/21-15:15:56.840 3df5 Delete type=0 #82
+2025/05/21-15:15:56.890 3f7a Compacting 1@1 + 2@2 files
+2025/05/21-15:15:56.979 3f7a Generated table #88@1: 52162 keys, 2214602 bytes
+2025/05/21-15:15:57.047 3f7a Generated table #89@1: 32261 keys, 2096669 bytes
+2025/05/21-15:15:57.047 3f7a Compacted 1@1 + 2@2 files => 4311271 bytes
+2025/05/21-15:15:57.050 3f7a compacted to: files[ 0 0 5 0 0 0 0 ]

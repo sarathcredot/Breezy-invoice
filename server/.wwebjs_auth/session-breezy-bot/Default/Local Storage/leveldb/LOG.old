@@ -1,3 +1,2 @@
-2025/05/22-17:24:12.390 21e8 Reusing MANIFEST /home/dev/Desktop/Breeze/server/.wwebjs_auth/session-breezy-bot/Default/Local Storage/leveldb/MANIFEST-000001
-2025/05/22-17:24:12.391 21e8 Recovering log #3
-2025/05/22-17:24:12.391 21e8 Reusing old log /home/dev/Desktop/Breeze/server/.wwebjs_auth/session-breezy-bot/Default/Local Storage/leveldb/000003.log 
+2025/05/30-16:33:22.653 4547 Creating DB /home/dev/Desktop/Breeze/server/.wwebjs_auth/session-breezy-bot/Default/Local Storage/leveldb since it was missing.
+2025/05/30-16:33:22.676 4547 Reusing MANIFEST /home/dev/Desktop/Breeze/server/.wwebjs_auth/session-breezy-bot/Default/Local Storage/leveldb/MANIFEST-000001

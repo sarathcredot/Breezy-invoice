@@ -1,2 +1,3 @@
-2025/06/13-16:35:48.318 c53e Creating DB /home/dev/Desktop/Breeze/server/.wwebjs_auth/RemoteAuth-cc-bot/Default/Local Storage/leveldb since it was missing.
-2025/06/13-16:35:48.330 c53e Reusing MANIFEST /home/dev/Desktop/Breeze/server/.wwebjs_auth/RemoteAuth-cc-bot/Default/Local Storage/leveldb/MANIFEST-000001
+2025/06/13-16:50:29.670 cb02 Reusing MANIFEST /home/dev/Desktop/Breeze/server/.wwebjs_auth/RemoteAuth-cc-bot/Default/Local Storage/leveldb/MANIFEST-000001
+2025/06/13-16:50:29.671 cb02 Recovering log #3
+2025/06/13-16:50:29.671 cb02 Reusing old log /home/dev/Desktop/Breeze/server/.wwebjs_auth/RemoteAuth-cc-bot/Default/Local Storage/leveldb/000003.log 

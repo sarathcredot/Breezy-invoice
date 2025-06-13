@@ -11,7 +11,7 @@ import mongoose from "mongoose"
 import invoiceRouter from "./src/routers/invoicerouter.js"
 
 dotenv.config();
-const { Client, LocalAuth, MessageMedia } = pkg;
+const { Client, LocalAuth, MessageMedia, RemoteAuth } = pkg;
 
 
 const app = express()
@@ -23,10 +23,9 @@ app.use(cors("*"))
 
 
 // mongoDB connecting
-connect()
+const isConnected = await connect()
 
 
-const sessionStore = new MongoStore({ mongoose: mongoose });
 
 const storage = multer.diskStorage({
     destination: (req, file, cb) => {
@@ -41,42 +40,85 @@ const upload = multer({ storage });
 app.use("/uploads", express.static("uploads"));
 
 
- let client;
+let client;
+
 
 async function initializeWhatsApp() {
-    client = new Client({
-        authStrategy: new LocalAuth({ clientId: "breezy-bot", store: sessionStore }),
-    });
+    try {
+        // Ensure MongoDB is connected first
+        console.log("🔌 Establishing MongoDB connection...");
 
-    client.on("qr", (qr) => {
-        console.log("📌 Scan this QR code to connect:");
-        qrcode.generate(qr, { small: true });
-    });
 
-    client.on("ready", () => {
-        console.log("✅ WhatsApp Bot is ready!");
-    });
+        if (!isConnected) {
+            console.log("🔄 Retrying in 5 seconds...");
+            setTimeout(initializeWhatsApp, 5000);
+            return;
+        }
 
-    client.on("authenticated", () => {
-        console.log("✅ WhatsApp authenticated!");
-    });
+        // Verify connection is ready
+        if (mongoose.connection.readyState !== 1) {
+            throw new Error('MongoDB connection not ready');
+        }
 
-    client.on("message", async (message) => {
-        console.log("📩 New message received:");
-    });
+        console.log("🏪 Creating MongoStore...");
+        const store = new MongoStore({ mongoose: mongoose });
 
-    client.on("disconnected", async (reason) => {
-        console.log("🚫 WhatsApp Disconnected:", reason);
-        console.log("🔄 Reconnecting in 5 seconds...");
-        setTimeout(initializeWhatsApp, 5000);
-    });
+        console.log("🤖 Initializing WhatsApp client...");
+        client = new Client({
+            authStrategy: new RemoteAuth({
+                clientId: "cc-bot",
+                store: store,
+                backupSyncIntervalMs: 300000 // 5 minutes backup interval
+            }),
+        });
 
-    client.initialize();
+        client.on("qr", (qr) => {
+            console.log("📌 Scan this QR code to connect:");
+            qrcode.generate(qr, { small: true });
+        });
+
+        client.on("ready", () => {
+            console.log("✅ WhatsApp Bot is ready!");
+        });
+
+        client.on("authenticated", () => {
+            console.log("✅ WhatsApp authenticated!");
+        });
+
+        // New event for RemoteAuth - session saved to database
+        client.on("remote_session_saved", () => {
+            console.log("💾 Session saved to remote database!");
+        });
+
+        client.on("message", async (message) => {
+            console.log("📩 New message received:");
+        });
+
+        client.on("disconnected", async (reason) => {
+            console.log("🚫 WhatsApp Disconnected:", reason);
+            console.log("🔄 Reconnecting in 5 seconds...");
+            setTimeout(initializeWhatsApp, 5000);
+        });
+
+        client.on("auth_failure", (message) => {
+            console.error("❌ Authentication failed:", message);
+        });
+
+        await client.initialize();
+
+    } catch (error) {
+        console.error("❌ Failed to initialize WhatsApp:", error);
+        console.log("🔄 Retrying in 10 seconds...");
+        setTimeout(initializeWhatsApp, 10000);
+    }
 }
 
 
+initializeWhatsApp().catch(console.error);
 
-initializeWhatsApp();
+
+
+
 
 
 
@@ -98,16 +140,16 @@ export default client;
 app.get("/", (req, res) => {
     res.send("Server is running...");
     console.log("test")
-  });
+});
 
 
-  // router
+// router
 
-  app.use("/api/invoice",invoiceRouter)
+app.use("/api/invoice", invoiceRouter)
 
-  
 
-  
+
+
 
 app.listen(3018, () => {
 

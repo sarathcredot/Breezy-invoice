@@ -80,6 +80,7 @@ async function initializeWhatsApp() {
         client.on("ready", () => {
             console.log("✅ WhatsApp Bot is ready!");
         });
+        
 
         client.on("authenticated", () => {
             console.log("✅ WhatsApp authenticated!");

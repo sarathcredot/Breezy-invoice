@@ -143,6 +143,9 @@ let reconnectAttempts = 0;
 const MAX_RECONNECT_ATTEMPTS = 5;
 
 
+
+
+
 async function initializeWhatsApp() {
     try {
         console.log("🔌 Establishing MongoDB connection...");

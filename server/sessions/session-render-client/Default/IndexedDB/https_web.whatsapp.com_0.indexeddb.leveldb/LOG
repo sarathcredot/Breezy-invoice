@@ -1,26 +1,25 @@
-2025/06/17-15:45:05.981 5c16 Reusing MANIFEST /home/dev/Desktop/Breeze/server/sessions/session-render-client/Default/IndexedDB/https_web.whatsapp.com_0.indexeddb.leveldb/MANIFEST-000001
-2025/06/17-15:45:05.981 5c16 Recovering log #567
-2025/06/17-15:45:06.093 5c16 Reusing old log /home/dev/Desktop/Breeze/server/sessions/session-render-client/Default/IndexedDB/https_web.whatsapp.com_0.indexeddb.leveldb/000567.log 
-2025/06/17-15:45:07.833 5c53 Level-0 table #577: started
-2025/06/17-15:45:07.868 5c53 Level-0 table #577: 736741 bytes OK
-2025/06/17-15:45:07.874 5c53 Delete type=0 #567
-2025/06/17-15:45:07.874 5c53 Manual compaction at level-0 from '\x00\xa9\x00\x00\x00' @ 72057594037927935 : 1 .. '\x00\xaa\x00\x00\x00' @ 0 : 0; will stop at '\x00\xa9\x00\x00\x05' @ 955191 : 1
-2025/06/17-15:45:07.874 5c53 Compacting 1@0 + 3@1 files
-2025/06/17-15:45:07.987 5c53 Generated table #578@0: 64288 keys, 2228553 bytes
-2025/06/17-15:45:08.026 5c53 Generated table #579@0: 15652 keys, 2176220 bytes
-2025/06/17-15:45:08.056 5c53 Generated table #580@0: 19534 keys, 738774 bytes
-2025/06/17-15:45:08.056 5c53 Compacted 1@0 + 3@1 files => 5143547 bytes
-2025/06/17-15:45:08.058 5c53 compacted to: files[ 0 3 2 0 0 0 0 ]
-2025/06/17-15:45:08.059 5c53 Delete type=2 #577
-2025/06/17-15:45:08.059 5c53 Manual compaction at level-0 from '\x00\xa9\x00\x00\x05' @ 955191 : 1 .. '\x00\xaa\x00\x00\x00' @ 0 : 0; will stop at (end)
-2025/06/17-15:45:10.630 5c50 Compacting 1@1 + 2@2 files
-2025/06/17-15:45:10.689 5c50 Generated table #581@1: 46487 keys, 2209559 bytes
-2025/06/17-15:45:10.738 5c50 Generated table #582@1: 48553 keys, 2038575 bytes
-2025/06/17-15:45:10.738 5c50 Compacted 1@1 + 2@2 files => 4248134 bytes
-2025/06/17-15:45:10.742 5c50 compacted to: files[ 0 2 2 0 0 0 0 ]
-2025/06/17-15:45:10.742 5c50 Delete type=2 #571
-2025/06/17-15:45:10.742 5c50 Delete type=2 #570
-2025/06/17-15:45:10.742 5c50 Delete type=2 #572
-2025/06/17-15:45:10.742 5c50 Delete type=2 #578
-2025/06/17-15:45:10.742 5c50 Delete type=2 #574
-2025/06/17-15:45:10.742 5c50 Delete type=2 #573
+2025/06/17-16:00:52.881 8123 Reusing MANIFEST /home/dev/Desktop/Breeze/server/sessions/session-render-client/Default/IndexedDB/https_web.whatsapp.com_0.indexeddb.leveldb/MANIFEST-000001
+2025/06/17-16:00:52.882 8123 Recovering log #576
+2025/06/17-16:00:52.949 8123 Reusing old log /home/dev/Desktop/Breeze/server/sessions/session-render-client/Default/IndexedDB/https_web.whatsapp.com_0.indexeddb.leveldb/000576.log 
+2025/06/17-16:00:54.844 8132 Level-0 table #585: started
+2025/06/17-16:00:54.861 8132 Level-0 table #585: 773660 bytes OK
+2025/06/17-16:00:54.862 8132 Delete type=0 #576
+2025/06/17-16:00:54.863 8132 Manual compaction at level-0 from '\x00\xaa\x00\x00\x00' @ 72057594037927935 : 1 .. '\x00\xab\x00\x00\x00' @ 0 : 0; will stop at '\x00\xaa\x00\x00\x05' @ 986652 : 1
+2025/06/17-16:00:54.863 8132 Compacting 1@0 + 2@1 files
+2025/06/17-16:00:54.913 8132 Generated table #586@0: 25822 keys, 2186291 bytes
+2025/06/17-16:00:54.951 8132 Generated table #587@0: 26154 keys, 1015474 bytes
+2025/06/17-16:00:54.951 8132 Compacted 1@0 + 2@1 files => 3201765 bytes
+2025/06/17-16:00:54.952 8132 compacted to: files[ 0 2 2 0 0 0 0 ]
+2025/06/17-16:00:54.953 8132 Delete type=2 #585
+2025/06/17-16:00:54.953 811d Manual compaction at level-0 from '\x00\xaa\x00\x00\x05' @ 986652 : 1 .. '\x00\xab\x00\x00\x00' @ 0 : 0; will stop at (end)
+2025/06/17-16:00:56.690 8132 Compacting 1@1 + 2@2 files
+2025/06/17-16:00:56.767 8132 Generated table #588@1: 49181 keys, 2213111 bytes
+2025/06/17-16:00:56.831 8132 Generated table #589@1: 50989 keys, 2213783 bytes
+2025/06/17-16:00:56.863 8132 Generated table #590@1: 7035 keys, 1788261 bytes
+2025/06/17-16:00:56.863 8132 Compacted 1@1 + 2@2 files => 6215155 bytes
+2025/06/17-16:00:56.864 8132 compacted to: files[ 0 1 3 0 0 0 0 ]
+2025/06/17-16:00:56.865 8132 Delete type=2 #586
+2025/06/17-16:00:56.865 8132 Delete type=2 #579
+2025/06/17-16:00:56.865 8132 Delete type=2 #581
+2025/06/17-16:00:56.865 8132 Delete type=2 #580
+2025/06/17-16:00:56.865 8132 Delete type=2 #582

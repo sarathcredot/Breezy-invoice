@@ -1,6 +1,0 @@
-2025/06/17-14:37:25.117 16f7 Reusing MANIFEST /home/dev/Desktop/Breeze/server/.wwebjs_auth/RemoteAuth-breezy-bot/Default/Local Storage/leveldb/MANIFEST-000001
-2025/06/17-14:37:25.118 16f7 Recovering log #3
-2025/06/17-14:37:25.119 16f7 Reusing old log /home/dev/Desktop/Breeze/server/.wwebjs_auth/RemoteAuth-breezy-bot/Default/Local Storage/leveldb/000003.log 
-2025/06/17-14:39:26.111 173e Level-0 table #5: started
-2025/06/17-14:39:26.114 173e Level-0 table #5: 18421 bytes OK
-2025/06/17-14:39:26.116 173e Delete type=0 #3

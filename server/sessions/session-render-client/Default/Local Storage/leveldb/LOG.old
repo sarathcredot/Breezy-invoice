@@ -1,3 +1,3 @@
-2025/06/17-15:45:05.157 5c16 Reusing MANIFEST /home/dev/Desktop/Breeze/server/sessions/session-render-client/Default/Local Storage/leveldb/MANIFEST-000001
-2025/06/17-15:45:05.157 5c16 Recovering log #3
-2025/06/17-15:45:05.158 5c16 Reusing old log /home/dev/Desktop/Breeze/server/sessions/session-render-client/Default/Local Storage/leveldb/000003.log 
+2025/06/17-16:26:34.842 b765 Reusing MANIFEST /home/dev/Desktop/Breeze/server/sessions/session-render-client/Default/Local Storage/leveldb/MANIFEST-000001
+2025/06/17-16:26:34.843 b765 Recovering log #3
+2025/06/17-16:26:34.844 b765 Reusing old log /home/dev/Desktop/Breeze/server/sessions/session-render-client/Default/Local Storage/leveldb/000003.log 

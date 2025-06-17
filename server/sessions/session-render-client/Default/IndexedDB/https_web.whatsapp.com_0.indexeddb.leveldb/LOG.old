@@ -1,26 +1,19 @@
-2025/06/17-15:45:05.981 5c16 Reusing MANIFEST /home/dev/Desktop/Breeze/server/sessions/session-render-client/Default/IndexedDB/https_web.whatsapp.com_0.indexeddb.leveldb/MANIFEST-000001
-2025/06/17-15:45:05.981 5c16 Recovering log #567
-2025/06/17-15:45:06.093 5c16 Reusing old log /home/dev/Desktop/Breeze/server/sessions/session-render-client/Default/IndexedDB/https_web.whatsapp.com_0.indexeddb.leveldb/000567.log 
-2025/06/17-15:45:07.833 5c53 Level-0 table #577: started
-2025/06/17-15:45:07.868 5c53 Level-0 table #577: 736741 bytes OK
-2025/06/17-15:45:07.874 5c53 Delete type=0 #567
-2025/06/17-15:45:07.874 5c53 Manual compaction at level-0 from '\x00\xa9\x00\x00\x00' @ 72057594037927935 : 1 .. '\x00\xaa\x00\x00\x00' @ 0 : 0; will stop at '\x00\xa9\x00\x00\x05' @ 955191 : 1
-2025/06/17-15:45:07.874 5c53 Compacting 1@0 + 3@1 files
-2025/06/17-15:45:07.987 5c53 Generated table #578@0: 64288 keys, 2228553 bytes
-2025/06/17-15:45:08.026 5c53 Generated table #579@0: 15652 keys, 2176220 bytes
-2025/06/17-15:45:08.056 5c53 Generated table #580@0: 19534 keys, 738774 bytes
-2025/06/17-15:45:08.056 5c53 Compacted 1@0 + 3@1 files => 5143547 bytes
-2025/06/17-15:45:08.058 5c53 compacted to: files[ 0 3 2 0 0 0 0 ]
-2025/06/17-15:45:08.059 5c53 Delete type=2 #577
-2025/06/17-15:45:08.059 5c53 Manual compaction at level-0 from '\x00\xa9\x00\x00\x05' @ 955191 : 1 .. '\x00\xaa\x00\x00\x00' @ 0 : 0; will stop at (end)
-2025/06/17-15:45:10.630 5c50 Compacting 1@1 + 2@2 files
-2025/06/17-15:45:10.689 5c50 Generated table #581@1: 46487 keys, 2209559 bytes
-2025/06/17-15:45:10.738 5c50 Generated table #582@1: 48553 keys, 2038575 bytes
-2025/06/17-15:45:10.738 5c50 Compacted 1@1 + 2@2 files => 4248134 bytes
-2025/06/17-15:45:10.742 5c50 compacted to: files[ 0 2 2 0 0 0 0 ]
-2025/06/17-15:45:10.742 5c50 Delete type=2 #571
-2025/06/17-15:45:10.742 5c50 Delete type=2 #570
-2025/06/17-15:45:10.742 5c50 Delete type=2 #572
-2025/06/17-15:45:10.742 5c50 Delete type=2 #578
-2025/06/17-15:45:10.742 5c50 Delete type=2 #574
-2025/06/17-15:45:10.742 5c50 Delete type=2 #573
+2025/06/17-16:26:36.121 b765 Reusing MANIFEST /home/dev/Desktop/Breeze/server/sessions/session-render-client/Default/IndexedDB/https_web.whatsapp.com_0.indexeddb.leveldb/MANIFEST-000001
+2025/06/17-16:26:36.122 b765 Recovering log #635
+2025/06/17-16:26:36.126 b765 Reusing old log /home/dev/Desktop/Breeze/server/sessions/session-render-client/Default/IndexedDB/https_web.whatsapp.com_0.indexeddb.leveldb/000635.log 
+2025/06/17-16:26:38.554 b765 Level-0 table #643: started
+2025/06/17-16:26:38.560 b765 Level-0 table #643: 28505 bytes OK
+2025/06/17-16:26:38.563 b765 Delete type=0 #635
+2025/06/17-16:26:38.563 b765 Manual compaction at level-0 from '\x00\xad\x00\x00\x00' @ 72057594037927935 : 1 .. '\x00\xae\x00\x00\x00' @ 0 : 0; will stop at (end)
+2025/06/17-16:26:42.154 b790 Compacting 1@1 + 4@2 files
+2025/06/17-16:26:42.288 b790 Generated table #644@1: 57077 keys, 2221534 bytes
+2025/06/17-16:26:42.433 b790 Generated table #645@1: 48191 keys, 2208333 bytes
+2025/06/17-16:26:42.526 b790 Generated table #646@1: 15349 keys, 2174651 bytes
+2025/06/17-16:26:42.600 b790 Generated table #647@1: 29225 keys, 1269949 bytes
+2025/06/17-16:26:42.600 b790 Compacted 1@1 + 4@2 files => 7874467 bytes
+2025/06/17-16:26:42.602 b790 compacted to: files[ 0 0 4 0 0 0 0 ]
+2025/06/17-16:26:42.603 b790 Delete type=2 #637
+2025/06/17-16:26:42.603 b790 Delete type=2 #643
+2025/06/17-16:26:42.603 b790 Delete type=2 #638
+2025/06/17-16:26:42.603 b790 Delete type=2 #640
+2025/06/17-16:26:42.603 b790 Delete type=2 #639

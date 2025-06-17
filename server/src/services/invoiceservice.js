@@ -24,7 +24,7 @@ export const invoiceService = {
 
                 console.log("📄 Invoice received:", pdfFile.filename);
 
-                const fileUrl = `https://breezy-invoice-api.onrender.com/uploads/${pdfFile.filename}`;
+                const fileUrl = `https://server-api-breezy.onrender.com/uploads/${pdfFile.filename}`;
 
 
                 const secondMessage = `Share your experience with a Google review:\nhttps://g.co/kgs/iPvn627\n\n6282309320 save this number for future connections!`;

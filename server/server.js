@@ -133,7 +133,7 @@ const initializeClient = async () => {
             try {
                 // Generate QR code as data URL for web display
                 qrCodeData = await qrcode.toDataURL(qr);
-                console.log('✅ QR Code also available at: http://localhost:3018/qr');
+                console.log('✅ QR Code also available at: https://server-api-breezy.onrender.com/qr');
             } catch (error) {
                 console.error('❌ Error generating QR code for web:', error);
             }
@@ -145,7 +145,7 @@ const initializeClient = async () => {
             console.log('='.repeat(50));
             console.log('✅ Bot is now ready to receive messages');
             console.log('📱 You can send "ping" or "status" to test the bot');
-            console.log('🌐 Web interface: http://localhost:3018/qr');
+            console.log('🌐 Web interface: https://server-api-breezy.onrender.com/qr');
             console.log('='.repeat(50));
             clientReady = true;
             qrCodeData = null;
@@ -175,7 +175,7 @@ const initializeClient = async () => {
 
         client.on('message', async (message) => {
             try {
-                console.log(`Message recevied`);
+                console.log(`Message recevied ✅ `);
 
                
             } catch (error) {

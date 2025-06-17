@@ -150,11 +150,11 @@ function Prviewinvoice() {
       pdf.addImage(imgData, "JPEG", 0, 0, imgWidth, imgHeight);
       downloadPdf = pdf
 
-      // invoice.style.position = "absolute";
-      // invoice.style.left = "-9999px";
-      // invoice.style.opacity = "0";
+      invoice.style.position = "absolute";
+      invoice.style.left = "-9999px";
+      invoice.style.opacity = "0";
 
-      pdf.save(`invoice-${invoiceData.invoiceNumber}.pdf`);
+      // pdf.save(`invoice-${invoiceData.invoiceNumber}.pdf`);
 
       const finalData = {
 
@@ -170,7 +170,7 @@ function Prviewinvoice() {
       formData.append("finalData", JSON.stringify(finalData));
       formData.append("pdf", pdfBlob, `invoice-${invoiceData.invoiceNumber}.pdf`);
 
-      // const result = await axios.post("https://breezy-invoice-api.onrender.com/api/invoice/serviceinvoice", formData)
+      const result = await axios.post("https://server-breezy.onrender.com/api/invoice/serviceinvoice", formData)
       // const result = await axios.post("http://localhost:3018/api/invoice/serviceinvoice", formData)
 
       // console.log(result.data)

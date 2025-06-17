@@ -59,6 +59,7 @@
 
 // Your invoice service file
 import { getWhatsAppClient, isWhatsAppReady, checkClientState } from "../../server.js";
+import { BillingItems } from "../../DB/model/billingItem.js";
 import pkg from "whatsapp-web.js";
 const { MessageMedia } = pkg;
 
@@ -201,5 +202,53 @@ export const invoiceService = {
                 reject(errorDetails);
             }
         });
+    },
+    getAllInvoiceItems: () => {
+
+        return new Promise(async (resolve, reject) => {
+
+            try {
+
+                const result = await BillingItems.find()
+                resolve(result)
+
+            } catch (error) {
+                reject(error)
+
+            }
+        })
+    },
+    createInvoiceItems: (formData) => {
+
+        return new Promise(async (resolve, reject) => {
+
+            try {
+
+                const final = new BillingItems(formData)
+                await final.save()
+                resolve()
+            } catch (error) {
+
+                reject()
+            }
+        })
+    },
+    deleteInvoiceitem: (itemId) => {
+
+        return new Promise(async (resolve, reject) => {
+
+            try {
+
+                await BillingItems.findByIdAndDelete(itemId)
+                resolve()
+
+            } catch (error) {
+
+                reject(error)
+            }
+        })
     }
+
+
+
 };

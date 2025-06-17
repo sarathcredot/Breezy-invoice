@@ -1,0 +1,43 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Debug Node.js Server",
+      "type": "node",
+      "request": "launch",
+      "program": "${workspaceFolder}/server/server.js",
+      "console": "integratedTerminal",
+      "restart": true,
+      "env": {
+        "NODE_ENV": "development",
+        "PORT": "3000",
+        "DEBUG": "*"
+      },
+      "envFile": "${workspaceFolder}/.env"
+    },
+    {
+      "name": "Debug with npm start",
+      "type": "node",
+      "request": "launch",
+      "cwd": "${workspaceFolder}",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["start"],
+      "console": "integratedTerminal",
+      "env": {
+        "NODE_ENV": "development"
+      }
+    },
+    {
+      "name": "Debug with Arguments",
+      "type": "node",
+      "request": "launch",
+      "program": "${workspaceFolder}/server/server.js",
+      "args": ["--env=development"],
+      "console": "integratedTerminal",
+      "env": {
+        "NODE_ENV": "development",
+        "PORT": "3000"
+      }
+    }
+  ]
+}

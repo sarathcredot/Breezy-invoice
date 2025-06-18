@@ -18,6 +18,7 @@ import { useNavigate } from "react-router-dom";
 import axios from "axios"
 import { message } from "antd"
 import { toast } from "react-toastify"
+import { ClipLoader } from "react-spinners"
 
 
 
@@ -46,133 +47,32 @@ const EditableInvoice = () => {
   // const [inputValue, setInputValue] = useState("");
   // const [filteredOptions, setFilteredOptions] = useState([]);
   const [discount, setdiscount] = useState(0)
+  const [loder, setloder] = useState(false)
   // const [tottalAmount, settotalAmount] = useState(0)
 
-  const [description, setdescription] = useState([
+  const [description, setdescription] = useState([])
 
-    {
-      opt: "Ac service",
-      price: 600,
-      qt: 1
-    },
-    {
-      opt: "Ac water service",
-      price: 1200,
-      qt: 1
-    },
-    {
-      opt: "Ac installation",
-      price: 1200,
-      qt: 1
-    },
-    {
-      opt: "Ac capasitor change",
-      price: 900,
-      qt: 1
-    },
-    {
-      opt: "Ac pcb service",
-      price: 0,
-      qt: 1
-    },
-    {
-      opt: "Gas Charging",
-      price: 0,
-      qt: 1
-    },
-    {
-      opt: "W/M motor change",
-      price: 0,
-      qt: 1
-    },
-    {
-      opt: "W/M capasitor change",
-      price: 0,
-      qt: 1
-    },
-    {
-      opt: "W/M service",
-      price: 500,
-      qt: 1
-    },
-    {
-      opt: "W/M  pcb service",
-      price: 500,
-      qt: 1
-    },
-    {
-      opt: "TV service",
-      price: 700,
-      qt: 1
-    },
-    {
-      opt: "Refrigerator Compressor change",
-      price: 700,
-      qt: 1
-    },
-    {
-      opt: "Compressor",
-      price: 4500,
-      qt: 1
-    },
-    {
-      opt: "Filter",
-      price: 350,
-      qt: 1
-    },
-    {
-      opt: "Transporting",
-      price: 150,
-      qt: 1
-    },
-    {
-      opt: "Label Charge",
-      price: 1200,
-      qt: 1
-    },
-    {
-      opt: "Gas",
-      price: 1800,
-      qt: 1
-    },
 
-    {
-      opt: "Fanmotor changed",
-      price: 1200,
-      qt: 1
-    },
-    {
-      opt: "Freezer",
-      price: 2000,
-      qt: 1
-    },
-    {
-      opt: "TV backlight change",
-      price: 0,
-      qt: 1
-    },
-    {
-      opt: "TV panal service",
-      price: 0,
-      qt: 1
-    },
+  const getParticulars = async () => {
 
-    {
-      opt: "Ac refitting",
-      price: 1800,
-      qt: 1
-    },
-    {
-      opt: "Other Expense",
-      price: 0,
-      qt: 1
+    try {
+
+      const result = (await axios("https://server-api-breezy.onrender.co/api/invoice/invoice-items")).data
+      console.log("resut", result)
+      setdescription(() => result?.data)
+
+    } catch (error) {
+
+      console.log("error", error)
+      toast.error("network error")
     }
+  }
 
+  useEffect(() => {
 
+    getParticulars()
 
-
-
-  ])
+  }, [])
 
 
 
@@ -295,6 +195,7 @@ const EditableInvoice = () => {
 
   const downloadPdf = async () => {
     const invoice = document.getElementById("invoice-pdf");
+    setloder(true)
 
     // Temporarily make the PDF section visible
     invoice.style.position = "static";
@@ -338,21 +239,21 @@ const EditableInvoice = () => {
       const result = await axios.post("https://server-api-breezy.onrender.com/api/invoice/serviceinvoice", formData)
       // const result = await axios.post("http://localhost:3018/api/invoice/serviceinvoice", formData)
 
-      // console.log(result.data)
-      alert("invoice sent to whatsapp !! ")
-      // window.open(result.data.whatsappLink, "_blank");
+      toast.success("invoice sent to whatsapp !!")
+      setloder(false)
+
       navigate("/home")
 
 
     } catch (error) {
 
-      // toast.error("invoice whatsapp sent failed !!")
-      alert("invoice sent to whatsapp failed please download !! ")
+      toast.warning("invoice sent to whatsapp failed please download !!")
       downloadPdf.save(`invoice-${invoiceData.invoiceNumber}.pdf`);
 
       console.log("err")
       console.error("Error generating PDF:", error);
       // message.success("invoice sent failed !!")
+      setloder(false)
       navigate("/home")
 
     } finally {
@@ -360,6 +261,7 @@ const EditableInvoice = () => {
       invoice.style.position = "absolute";
       invoice.style.left = "-9999px";
       invoice.style.opacity = "0";
+      setloder(false)
     }
   };
 
@@ -370,9 +272,9 @@ const EditableInvoice = () => {
 
     const data = JSON.parse(selectedOption)
     const updatedItems = [...invoiceData.items];
-    updatedItems[index]["description"] = data.opt;
+    updatedItems[index]["description"] = data.particulars;
     updatedItems[index]["price"] = data.price;
-    updatedItems[index]["quantity"] = data.qt;
+    updatedItems[index]["quantity"] = data.quantity;
 
 
     setInvoiceData((prev) => ({
@@ -508,7 +410,7 @@ const EditableInvoice = () => {
                         {
                           description.map((data, index) => (
 
-                            <option value={JSON.stringify(data)}>{data.opt}</option>
+                            <option value={JSON.stringify(data)}>{data.particulars}</option>
 
                           ))
                         }
@@ -590,9 +492,16 @@ const EditableInvoice = () => {
 
             <button
               onClick={downloadPdf}
+
               className=" block sm:hidden w-[100px] mb-10 mr-5 h-[30px] bg-blue-500 text-white rounded-md hover:bg-blue-600"
             >
-              Sent Invoice
+              {
+                loder ?
+                  <ClipLoader size={20} />
+                  : "Sent Invoice"
+
+              }
+
             </button>
 
 

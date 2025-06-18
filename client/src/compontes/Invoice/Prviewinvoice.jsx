@@ -2,12 +2,14 @@
 
 
 import React from 'react'
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import jsPDF from "jspdf";
 import html2canvas from "html2canvas";
 import Navbar from "../Home/Navbar"
 import { useLocation, useNavigate } from 'react-router-dom';
 import axios from 'axios';
+import { toast } from "react-toastify"
+import { ClipLoader } from "react-spinners"
 
 
 
@@ -112,6 +114,7 @@ function Prviewinvoice() {
 
   const location = useLocation();
   const navigate = useNavigate()
+  const [loder, setloader] = useState(false)
   console.log("props", location.state)
 
   const { invoiceData,
@@ -121,6 +124,7 @@ function Prviewinvoice() {
 
   const downloadPdf = async () => {
     const invoice = document.getElementById("invoice-pdf");
+    setloader(true)
 
     // Temporarily make the PDF section visible
     invoice.style.position = "static";
@@ -174,7 +178,9 @@ function Prviewinvoice() {
       // const result = await axios.post("http://localhost:3018/api/invoice/serviceinvoice", formData)
 
       // console.log(result.data)
-      alert("invoice sent to whatsapp !! ")
+      // alert("invoice sent to whatsapp !! ")
+      toast.success("invoice sent to whatsapp !! ")
+      setloader(false)
       // window.open(result.data.whatsappLink, "_blank");
       navigate("/invoice")
 
@@ -182,17 +188,20 @@ function Prviewinvoice() {
     } catch (error) {
 
       // toast.error("invoice whatsapp sent failed !!")
-      alert("invoice sent to whatsapp failed please download !! ")
+      // alert("invoice sent to whatsapp failed please download !! ")
+      toast.warning("invoice sent to whatsapp failed please download !!")
       downloadPdf.save(`invoice-${invoiceData.invoiceNumber}.pdf`);
 
       console.log("err")
       console.error("Error generating PDF:", error);
-      navigate("/home")
+      setloader(false)
+      navigate("/invoice")
     } finally {
       // Re-hide the PDF section
       invoice.style.position = "absolute";
       invoice.style.left = "-9999px";
       invoice.style.opacity = "0";
+      setloader(false)
     }
   };
 
@@ -215,7 +224,15 @@ function Prviewinvoice() {
           onClick={downloadPdf}
           className="w-[150px] mt-[50px] h-[50px] bg-[#1f709f] text-white text-[17px] rounded-md hover:bg-blue-600"
         >
-          Sent Invoice
+          {
+            loder ?
+              <ClipLoader color='white' size={20} />
+              :
+              "Sent Invoice"
+
+
+          }
+
         </button>
 
 

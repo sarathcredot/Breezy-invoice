@@ -95,7 +95,7 @@ const cleanupClient = () => {
         clearTimeout(restartTimeout);
         restartTimeout = null;
     }
-    
+
     if (client) {
         client.removeAllListeners();
         try {
@@ -109,10 +109,10 @@ const cleanupClient = () => {
 
 const initializeClient = async () => {
     if (isShuttingDown) return;
-    
+
     try {
         cleanupClient();
-        
+
         client = createClient();
 
         client.on('qr', async (qr) => {
@@ -122,14 +122,14 @@ const initializeClient = async () => {
             console.log('🔍 SCAN THIS QR CODE WITH YOUR WHATSAPP APP');
             console.log('📱 Open WhatsApp → Settings → Linked Devices → Link a Device');
             console.log('='.repeat(50));
-            
+
             // Display QR code in terminal
             qrcodeTerminal.generate(qr, { small: true });
             console.log('='.repeat(50));
             console.log('⏳ Waiting for you to scan the QR code...');
             console.log('💡 The QR code will refresh automatically if needed');
             console.log('='.repeat(50));
-            
+
             try {
                 // Generate QR code as data URL for web display
                 qrCodeData = await qrcode.toDataURL(qr);
@@ -177,7 +177,7 @@ const initializeClient = async () => {
             try {
                 console.log(`Message recevied ✅ `);
 
-               
+
             } catch (error) {
                 console.error('Error handling message:', error);
             }
@@ -188,7 +188,7 @@ const initializeClient = async () => {
         });
 
         await client.initialize();
-        
+
     } catch (error) {
         console.error('Failed to initialize client:', error);
         if (!isShuttingDown) {
@@ -204,9 +204,9 @@ const initializeClient = async () => {
 const gracefulShutdown = async (signal) => {
     console.log(`\nReceived ${signal}. Starting graceful shutdown...`);
     isShuttingDown = true;
-    
+
     cleanupClient();
-    
+
     // Close server
     if (server) {
         server.close(() => {
@@ -224,6 +224,9 @@ process.on('SIGINT', () => gracefulShutdown('SIGINT'));
 
 // Initialize client
 initializeClient();
+
+
+
 
 export default client
 

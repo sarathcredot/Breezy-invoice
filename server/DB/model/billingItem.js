@@ -19,7 +19,11 @@ const billingItemsSchema = new mongoose.Schema({
         type: Number,
         default: 0
     }
-})
+},
+    {
+        timestamps: true
+    }
+)
 
 
-export const BillingItems=mongoose.model("billingItems",billingItemsSchema)
+export const BillingItems = mongoose.model("billingItems", billingItemsSchema)

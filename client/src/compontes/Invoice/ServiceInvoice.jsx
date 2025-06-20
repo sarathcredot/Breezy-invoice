@@ -14,7 +14,7 @@ import html2canvas from "html2canvas";
 import Navbar from "../Home/Navbar"
 import { v4 as uuidv4 } from "uuid";
 import { useNavigate } from "react-router-dom";
-// import Select from "react-select";
+import Select from "react-select";
 import axios from "axios"
 import { message } from "antd"
 import { toast } from "react-toastify"
@@ -51,6 +51,7 @@ const EditableInvoice = () => {
   // const [tottalAmount, settotalAmount] = useState(0)
 
   const [description, setdescription] = useState([])
+  const [options, setoptions] = useState([])
 
 
   const getParticulars = async () => {
@@ -58,8 +59,13 @@ const EditableInvoice = () => {
     try {
 
       const result = (await axios("https://server-api-breezy.onrender.com/api/invoice/invoice-items")).data
-      console.log("resut", result)
+      console.log("resut", result?.data)
       setdescription(() => result?.data)
+      const optionsData = result?.data.map(item => ({
+        value: item._id,
+        label: item.particulars
+      }));
+      setoptions(() => optionsData)
 
     } catch (error) {
 
@@ -283,6 +289,28 @@ const EditableInvoice = () => {
     }));
   }
 
+  const discriptionSeclectweb = (index, selectedOption) => {
+
+    console.log("select", index, selectedOption)
+
+
+
+    const data = description.find((item) => item?._id === selectedOption?.value)
+    console.log("sect data", data)
+
+
+    const updatedItems = [...invoiceData.items];
+    updatedItems[index]["description"] = data.particulars;
+    updatedItems[index]["price"] = data.price;
+    updatedItems[index]["quantity"] = data.quantity;
+
+
+    setInvoiceData((prev) => ({
+      ...prev,
+      items: updatedItems,
+    }));
+  }
+
 
 
 
@@ -414,9 +442,9 @@ const EditableInvoice = () => {
                       />
                     </td>
                     <td className="border border-gray-300 px-2 py-1">
-                      <select
+                      {/* <select
                         onChange={(e) => { discriptionSeclect(index, e.target.value) }}
-                        className="w-full border border-black px-2 py-1"
+                        className="w-full border border-black px-2 py-1  "
                       >
                         <option value="">Select description</option>
                         {
@@ -429,13 +457,38 @@ const EditableInvoice = () => {
                       </select>
 
 
-                      {/* <Select
-                      options={options}
-                      onChange={(selectedOption) => { discriptionSeclect(index, selectedOption) }}
-                      className="w-full"
-                      placeholder="Select or type..."
-                      isSearchable
-                    /> */}
+                      <Select
+                        options={options}
+                        onChange={(selectedOption) => { discriptionSeclectweb(index, selectedOption) }}
+                        className="w-full bg-red-400"
+                        placeholder="Select or type..."
+                        isSearchable
+
+                      /> */}
+
+
+                      {/* Native select for mobile only */}
+                      <select
+                        onChange={(e) => { discriptionSeclect(index, e.target.value) }}
+                        className="w-full border border-black px-2 py-1 block lg:hidden" // Show only on small screens
+                      >
+                        <option value="">Select description</option>
+                        {
+                          description.map((data, index) => (
+                            <option value={JSON.stringify(data)} key={index}>{data.particulars}</option>
+                          ))
+                        }
+                      </select>
+
+                      {/* React Select for laptop only */}
+                      <Select
+                        options={options}
+                        onChange={(selectedOption) => { discriptionSeclectweb(index, selectedOption) }}
+                        className="w-full bg-red-400 hidden lg:block" // Show only on large screens
+                        placeholder="Select or type..."
+                        isSearchable
+                      />
+
 
 
 

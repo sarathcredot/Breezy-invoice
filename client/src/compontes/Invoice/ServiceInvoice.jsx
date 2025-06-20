@@ -32,14 +32,14 @@ const EditableInvoice = () => {
       mob: ""
     },
     items: [
-      { description: "", quantity: 0, price: 0, total: 0 },
-      { description: "", quantity: 0, price: 0, total: 0 },
-      { description: "", quantity: 0, price: 0, total: 0 },
-      { description: "", quantity: 0, price: 0, total: 0 },
-      { description: "", quantity: 0, price: 0, total: 0 },
-      { description: "", quantity: 0, price: 0, total: 0 },
-      { description: "", quantity: 0, price: 0, total: 0 },
-      { description: "", quantity: 0, price: 0, total: 0 },
+      { text: "", description: "", quantity: 0, price: 0, total: 0 },
+      { text: "", description: "", quantity: 0, price: 0, total: 0 },
+      { text: "", description: "", quantity: 0, price: 0, total: 0 },
+      { text: "", description: "", quantity: 0, price: 0, total: 0 },
+      { text: "", description: "", quantity: 0, price: 0, total: 0 },
+      { text: "", description: "", quantity: 0, price: 0, total: 0 },
+      { text: "", description: "", quantity: 0, price: 0, total: 0 },
+      { text: "", description: "", quantity: 0, price: 0, total: 0 },
     ],
     total: 0,
   });
@@ -391,6 +391,7 @@ const EditableInvoice = () => {
           <table className="w-full mt-5 border-collapse border border-gray-300 text-left text-sm">
             <thead className="bg-blue-400 text-white">
               <tr>
+                <th className="border border-gray-300 px-2 py-1">Text</th>
                 <th className="border border-gray-300 px-2 py-1">Particulars</th>
                 <th className="border border-gray-300 px-2 py-1">Quantity</th>
                 <th className="border border-gray-300 px-2 py-1">Price</th>
@@ -401,6 +402,17 @@ const EditableInvoice = () => {
               {
                 invoiceData.items.map((item, index) => (
                   <tr key={index}>
+                    <td className="border border-gray-300 px-2 py-1">
+                      <input
+                        type="type"
+                        value={item.brand}
+
+                        onChange={(e) =>
+                          handleItemChange(index, "text", e.target.value)
+                        }
+                        className="w-full border border-black px-2 py-1"
+                      />
+                    </td>
                     <td className="border border-gray-300 px-2 py-1">
                       <select
                         onChange={(e) => { discriptionSeclect(index, e.target.value) }}
@@ -702,7 +714,7 @@ const EditableInvoice = () => {
             <tbody>
               {invoiceData.items.map((row, index) => (
                 <tr key={index} className="">
-                  <td className=" border-r border-[#1f709f]  px-4 py-4">{row?.description}</td>
+                  <td className=" border-r border-[#1f709f]  px-4 py-4"><span className="mr-3" >{row?.text}  </span> {row?.description}</td>
                   <td className="border-r border-[#1f709f] px-4 py-4 text-center">{row?.price > 0 ? row?.price : ""}</td>
                   <td className=" border-r border-[#1f709f] px-4 py-2 text-center">{row?.quantity > 0 ? row.quantity : ""}</td>
                   <td className=" px-4 py-2 text-center">

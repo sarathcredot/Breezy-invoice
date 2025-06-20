@@ -1,6 +1,7 @@
 
 
 import { invoiceService } from "../services/invoiceservice.js"
+import { userService } from "../services/userservice.js"
 import { response } from "../utils/responseUtils.js"
 
 
@@ -13,6 +14,15 @@ export const invoiceControler = {
         try {
 
             console.log("invoice")
+            const resevData = JSON.parse(req.body.finalData)
+            const userData = {
+
+                name: resevData?.invoiceData.customer.address,
+                number: resevData?.invoiceData.customer.mob,
+                place: resevData?.invoiceData.customer.address
+            }
+            // save user data
+            await userService.createUser(userData)
 
             const result = await invoiceService.generateServiceInvoiceService(req)
 
@@ -57,10 +67,10 @@ export const invoiceControler = {
 
         try {
 
-            const {itemId}=req.params
-            console.log("id",itemId)
-        
-            const  result  = await invoiceService.deleteInvoiceitem(itemId)
+            const { itemId } = req.params
+            console.log("id", itemId)
+
+            const result = await invoiceService.deleteInvoiceitem(itemId)
             response.success(res, result, "invoice item deleted ")
 
 

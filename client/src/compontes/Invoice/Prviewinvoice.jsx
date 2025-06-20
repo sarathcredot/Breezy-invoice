@@ -352,7 +352,7 @@ function Prviewinvoice() {
               <tbody>
                 {invoiceData.items.map((row, index) => (
                   <tr key={index} className="">
-                    <td className=" border-r border-[#1f709f]  px-4 py-4">{row?.description}</td>
+                    <td className=" border-r border-[#1f709f]  px-4 py-4"> {row?.text} {row?.text && "-"} {row?.description}</td>
                     <td className="border-r border-[#1f709f] px-4 py-4 text-center">{row?.price > 0 ? row?.price : ""}</td>
                     <td className=" border-r border-[#1f709f] px-4 py-2 text-center">{row?.quantity > 0 ? row.quantity : ""}</td>
                     <td className=" px-4 py-2 text-center">

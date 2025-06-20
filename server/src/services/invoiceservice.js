@@ -3,6 +3,7 @@ import client from "../../server.js"
 import pkg from "whatsapp-web.js"
 const { MessageMedia } = pkg
 import { BillingItems } from "../../DB/model/billingItem.js"
+import { User } from "../../DB/model/user.js"
 
 
 

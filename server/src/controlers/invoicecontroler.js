@@ -17,7 +17,7 @@ export const invoiceControler = {
             const resevData = JSON.parse(req.body.finalData)
             const userData = {
 
-                name: resevData?.invoiceData.customer.address,
+                name: resevData?.invoiceData.customer.name,
                 number: resevData?.invoiceData.customer.mob,
                 place: resevData?.invoiceData.customer.address
             }

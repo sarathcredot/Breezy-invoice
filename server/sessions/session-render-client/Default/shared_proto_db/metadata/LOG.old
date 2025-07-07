@@ -1,2 +1,3 @@
-2025/06/17-16:26:06.163 b0cd Creating DB /home/dev/Desktop/Breeze/server/sessions/session-render-client/Default/shared_proto_db/metadata since it was missing.
-2025/06/17-16:26:06.167 b0cd Reusing MANIFEST /home/dev/Desktop/Breeze/server/sessions/session-render-client/Default/shared_proto_db/metadata/MANIFEST-000001
+2025/06/18-15:26:04.459 2e1f Reusing MANIFEST /home/dev/Desktop/Breeze/server/sessions/session-render-client/Default/shared_proto_db/metadata/MANIFEST-000001
+2025/06/18-15:26:04.459 2e1f Recovering log #3
+2025/06/18-15:26:04.459 2e1f Reusing old log /home/dev/Desktop/Breeze/server/sessions/session-render-client/Default/shared_proto_db/metadata/000003.log 

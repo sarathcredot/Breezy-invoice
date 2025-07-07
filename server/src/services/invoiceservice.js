@@ -33,11 +33,14 @@ export const invoiceService = {
 
                 const media = await MessageMedia.fromUrl(fileUrl, { unsafeMime: true });
 
+                // console.log("📄 Media created for invoice:", media);
+
 
                 const message = "*Breezy Cooling Solution ❄️*\nThis is your service invoice! Please check.";
 
                 await client.sendMessage(chatId, message);
                 await client.sendMessage(chatId, media);
+
                 await client.sendMessage(chatId, secondMessage);
 
                 console.log("invoice sented !!")

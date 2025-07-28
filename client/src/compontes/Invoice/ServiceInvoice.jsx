@@ -58,7 +58,7 @@ const EditableInvoice = () => {
 
     try {
 
-      const result = (await axios("https://server-api-breezy.onrender.com/api/invoice/invoice-items")).data
+      const result = (await axios("https://breezy-invoice-app.onrender.com/api/invoice/invoice-items")).data
       console.log("resut", result?.data)
       setdescription(() => result?.data)
       const optionsData = result?.data.map(item => ({

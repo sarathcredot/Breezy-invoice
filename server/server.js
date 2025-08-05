@@ -230,7 +230,7 @@ initializeClient();
 
 export default client
 
-app.get("/", (req, res) => {
+app.get("/test", (req, res) => {
     res.send("Server is running...");
     console.log("test")
 });

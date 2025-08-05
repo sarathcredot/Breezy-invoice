@@ -1,3 +1,2 @@
-2025/07/28-13:05:57.252 2fbe Reusing MANIFEST /home/dev/Desktop/Breeze/server/sessions/session-render-client/Default/Service Worker/Database/MANIFEST-000001
-2025/07/28-13:05:57.253 2fbe Recovering log #3
-2025/07/28-13:05:57.255 2fbe Reusing old log /home/dev/Desktop/Breeze/server/sessions/session-render-client/Default/Service Worker/Database/000003.log 
+2025/08/05-15:00:42.883 20a0 Creating DB /home/dev/Desktop/Breeze/server/sessions/session-render-client/Default/Service Worker/Database since it was missing.
+2025/08/05-15:00:42.888 20a0 Reusing MANIFEST /home/dev/Desktop/Breeze/server/sessions/session-render-client/Default/Service Worker/Database/MANIFEST-000001

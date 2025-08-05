@@ -1,3 +1,2 @@
-2025/07/28-13:05:58.766 2fb8 Reusing MANIFEST /home/dev/Desktop/Breeze/server/sessions/session-render-client/Default/Session Storage/MANIFEST-000001
-2025/07/28-13:05:58.767 2fb8 Recovering log #3
-2025/07/28-13:05:58.768 2fb8 Reusing old log /home/dev/Desktop/Breeze/server/sessions/session-render-client/Default/Session Storage/000003.log 
+2025/08/05-15:00:40.693 2065 Creating DB /home/dev/Desktop/Breeze/server/sessions/session-render-client/Default/Session Storage since it was missing.
+2025/08/05-15:00:40.701 2065 Reusing MANIFEST /home/dev/Desktop/Breeze/server/sessions/session-render-client/Default/Session Storage/MANIFEST-000001

@@ -10,6 +10,8 @@ import qrcodeTerminal from 'qrcode-terminal';
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
+import fetch from "node-fetch"; // or: const fetch = require("node-fetch");
+
 
 dotenv.config();
 
@@ -345,6 +347,22 @@ app.get("/api/whatsapp/status", (req, res) => {
 
 // router
 app.use("/api/invoice", invoiceRouter)
+
+
+
+
+// sever checking 
+
+const APP_URL = "https://breezy-invoice-app.onrender.com/test";
+
+// Ping every 5 minutes
+setInterval(() => {
+    fetch(APP_URL)
+        .then(res => console.log(`[PING] ${new Date().toISOString()} Status: ${res.status}`))
+        .catch(err => console.error("[PING ERROR]", err.message));
+}, 2 * 60 * 1000); // 5 minutes
+
+
 
 const server = app.listen(3018, () => {
     console.log("server started on port 3018")

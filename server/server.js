@@ -356,11 +356,11 @@ app.use("/api/invoice", invoiceRouter)
 const APP_URL = "https://breezy-invoice-app.onrender.com/test";
 
 // Ping every 5 minutes
-setInterval(() => {
-    fetch(APP_URL)
-        .then(res => console.log(`[PING] ${new Date().toISOString()} Status: ${res.status}`))
-        .catch(err => console.error("[PING ERROR]", err.message));
-}, 2 * 60 * 1000); // 5 minutes
+// setInterval(() => {
+//     fetch(APP_URL)
+//         .then(res => console.log(`[PING] ${new Date().toISOString()} Status: ${res.status}`))
+//         .catch(err => console.error("[PING ERROR]", err.message));
+// }, 2 * 60 * 1000); // 5 minutes
 
 
 
